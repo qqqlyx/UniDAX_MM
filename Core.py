@@ -1,7 +1,7 @@
 """
 # -*- coding: utf-8 -*-
 @author: robin.liu
-@git
+@github:
 """
 
 import mmAction as mma
