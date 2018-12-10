@@ -230,8 +230,8 @@ def mm_cancel_all(stock_list, log):
                 re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
                 # 打印log
                 if re['msg'] != 'suc':
-                    log.error(re)
+                    log.error(re + 'code: ' + code)
                 else:
-                    log.info(re)
+                    log.error(re + 'code: ' + code)
 
     return
