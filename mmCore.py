@@ -5,6 +5,7 @@
 """
 
 import mmAction as mma
+from UniDax import UniDaxServices as uds, Constant as cons
 import threading
 import logging
 import json
@@ -41,7 +42,8 @@ def set_log():
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     # 创建一个handler，用于写入日志文件
-    fh = logging.FileHandler('D://test.log')
+    fh = logging.FileHandler('test.log')
+    #fh = logging.FileHandler('D://test.log')
     fh.setLevel(logging.DEBUG)
     # 再创建一个handler，用于输出到控制台
     ch = logging.StreamHandler()
@@ -57,8 +59,8 @@ def set_log():
     logger.info('robin mm begin')
     return logger
 
-
 # log等级 info < warning < error
+
 run_count = 1
 log = set_log()
 timer = threading.Timer(1, core_timer)

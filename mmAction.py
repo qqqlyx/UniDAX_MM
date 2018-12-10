@@ -5,14 +5,9 @@
 用来维护做市报价
 """
 
-import HuobiServices as hbs
-import UniDaxServices as uds
-import Constant as cons
+from Huobi import HuobiServices as hbs
+from UniDax import UniDaxServices as uds, Constant as cons
 import json
-import logging
-import math
-import threading
-from pprint import pprint
 import random
 
 # 获取火币行情

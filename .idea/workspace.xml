@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="30d7187c-cbf9-4adf-b648-848834d663ee" name="Default Changelist" comment="" />
+    <list default="true" id="30d7187c-cbf9-4adf-b648-848834d663ee" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/UniDAX_MM.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/UniDAX_MM.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cancel_All.py" beforeDir="false" afterPath="$PROJECT_DIR$/Cancel_All.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/UniDax/Constant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/mmCore.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuobiServices.py" beforeDir="false" afterPath="$PROJECT_DIR$/Huobi/HuobiServices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HuobiUtils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Huobi/HuobiUtils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UniDaxServices.py" beforeDir="false" afterPath="$PROJECT_DIR$/UniDax/UniDaxServices.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mmAction.py" beforeDir="false" afterPath="$PROJECT_DIR$/mmAction.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,14 +81,47 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="1512304889">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="dummy" value="2" />
+          <entry key="py" value="83" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="83" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitattributes" value="1" />
+          <entry key="log" value="1" />
+          <entry key="py" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PLAIN_TEXT" value="2" />
+          <entry key="Python" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Core.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/mmCore.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
+            <state relative-caret-position="288">
+              <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
               <folding>
                 <element signature="e#52#74#0" expanded="true" />
               </folding>
@@ -88,61 +132,55 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mmAction.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="226" column="13" selection-start-line="226" selection-start-column="13" selection-end-line="226" selection-end-column="13" />
-              <folding>
-                <element signature="e#62#89#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="192">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="58" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UniDaxServices.py">
+        <entry file="file://$PROJECT_DIR$/UniDax/UniDaxServices.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1662">
-              <caret line="198" column="17" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="17" />
+            <state relative-caret-position="-259">
+              <caret line="57" column="14" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HuobiServices.py">
+        <entry file="file://$PROJECT_DIR$/Huobi/HuobiServices.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="503" column="24" selection-start-line="4" selection-start-column="3" selection-end-line="503" selection-end-column="24" />
+            <state relative-caret-position="495">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HuobiUtils.py">
+        <entry file="file://$PROJECT_DIR$/Huobi/HuobiUtils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
+            <state relative-caret-position="2424">
               <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Constant.py">
+        <entry file="file://$PROJECT_DIR$/UniDax/Constant.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-              <folding>
-                <marker date="1544167465764" expanded="true" signature="120:125" ph="..." />
-              </folding>
+            <state relative-caret-position="240">
+              <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Cancel_All.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            <state relative-caret-position="312">
+              <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
               <folding>
-                <element signature="e#62#89#0" expanded="true" />
+                <element signature="e#62#102#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -168,7 +206,12 @@
       <find>mm_cancel_all</find>
       <find>print</find>
       <find>do_t</find>
+      <find>new</find>
+      <find>getUrlContent</find>
     </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -177,25 +220,32 @@
         <option value="$PROJECT_DIR$/HuobiServices.py" />
         <option value="$PROJECT_DIR$/UniDAXServices.py" />
         <option value="D:/unidax_mm/test.py" />
-        <option value="$PROJECT_DIR$/Cancel_All.py" />
-        <option value="$PROJECT_DIR$/mmAction.py" />
-        <option value="$PROJECT_DIR$/UniDaxServices.py" />
         <option value="$PROJECT_DIR$/Constant.py" />
         <option value="$PROJECT_DIR$/Core.py" />
+        <option value="$PROJECT_DIR$/Cancel_All.py" />
+        <option value="$PROJECT_DIR$/UniDaxServices.py" />
+        <option value="$PROJECT_DIR$/hedgeAction.py" />
+        <option value="$PROJECT_DIR$/UniDax/UniDaxServices.py" />
+        <option value="$PROJECT_DIR$/mmAction.py" />
+        <option value="$PROJECT_DIR$/mmCore.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="242" />
     <option name="y" value="183" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -203,15 +253,26 @@
               <item name="UniDAX_MM" type="b2602c69:ProjectViewProjectNode" />
               <item name="UniDAX_MM" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="UniDAX_MM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UniDAX_MM" type="462c0819:PsiDirectoryNode" />
+              <item name="UniDax" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Colors" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\GitHub\UniDAX_MM\UniDax" />
+      <recent name="D:\GitHub\UniDAX_MM\Huobi" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -225,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Core">
+  <component name="RunManager" selected="Python.Cancel_All">
     <configuration name="Cancel_All" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UniDAX_MM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -259,7 +320,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Core.py" />
+      <option name="SCRIPT_NAME" value="D:\GitHub\UniDAX_MM\mmCore.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -280,7 +341,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/UniDaxServices.py" />
+      <option name="SCRIPT_NAME" value="D:\GitHub\UniDAX_MM\UniDax\UniDaxServices.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -310,7 +371,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="mmCore" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UniDAX_MM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -318,11 +379,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="D:/unidax_mm" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="D:/unidax_mm/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mmCore.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -335,16 +396,16 @@
       <item itemvalue="Python.Cancel_All" />
       <item itemvalue="Python.mmAction" />
       <item itemvalue="Python.Core" />
-      <item itemvalue="Python.test" />
       <item itemvalue="Python.UniDaxServices" />
+      <item itemvalue="Python.mmCore" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Core" />
         <item itemvalue="Python.Cancel_All" />
-        <item itemvalue="Python.UniDaxServices" />
+        <item itemvalue="Python.mmCore" />
         <item itemvalue="Python.mmAction" />
-        <item itemvalue="Python.test" />
+        <item itemvalue="Python.Core" />
+        <item itemvalue="Python.UniDaxServices" />
       </list>
     </recent_temporary>
   </component>
@@ -362,15 +423,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15173867" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" x="21" y="564" width="1898" height="389" id="Run" order="2" visible="true" weight="0.71041214" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.42903575" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
+      <window_info active="true" anchor="bottom" x="21" y="564" width="1898" height="389" id="Run" order="2" visible="true" weight="0.43058568" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4284165" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -388,18 +450,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mmAction.py</url>
-          <line>108</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/mmAction.py</url>
-          <line>211</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -412,77 +462,68 @@
   <component name="editorHistoryManager">
     <entry file="file://D:/unidax_mm/UniDaxApiServices.py" />
     <entry file="file://D:/unidax_mm/test.py" />
-    <entry file="file://D:/Users/robin/Anaconda3/Lib/threading.py">
+    <entry file="file://D:/Users/robin/Anaconda3/Lib/threading.py" />
+    <entry file="file://D:/Users/robin/Anaconda3/Lib/json/decoder.py" />
+    <entry file="file://$PROJECT_DIR$/Huobi/HuobiUtils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="1165" column="23" lean-forward="true" selection-start-line="1165" selection-start-column="23" selection-end-line="1165" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://D:/Users/robin/Anaconda3/Lib/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="354" selection-start-line="354" selection-end-line="354" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HuobiUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="2424">
           <caret line="109" column="21" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Huobi/HuobiServices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.log">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniDax/Constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="10" column="23" lean-forward="true" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hedgeAction.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmAction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UniDax/UniDaxServices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-259">
+          <caret line="57" column="14" selection-start-line="57" selection-start-column="4" selection-end-line="57" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mmCore.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="63" column="13" lean-forward="true" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="13" />
+          <folding>
+            <element signature="e#52#74#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Cancel_All.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+        <state relative-caret-position="312">
+          <caret line="13" column="47" lean-forward="true" selection-start-line="13" selection-start-column="47" selection-end-line="13" selection-end-column="47" />
           <folding>
-            <element signature="e#62#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HuobiServices.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="503" column="24" selection-start-line="4" selection-start-column="3" selection-end-line="503" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Constant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
-          <folding>
-            <marker date="1544167465764" expanded="true" signature="120:125" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UniDaxServices.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1662">
-          <caret line="198" column="17" selection-start-line="198" selection-start-column="17" selection-end-line="198" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mmAction.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="226" column="13" selection-start-line="226" selection-start-column="13" selection-end-line="226" selection-end-column="13" />
-          <folding>
-            <element signature="e#62#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="30" column="43" lean-forward="true" selection-start-line="30" selection-start-column="43" selection-end-line="30" selection-end-column="43" />
-          <folding>
-            <element signature="e#52#74#0" expanded="true" />
+            <element signature="e#62#102#0" expanded="true" />
           </folding>
         </state>
       </provider>

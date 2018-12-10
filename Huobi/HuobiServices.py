@@ -1,6 +1,6 @@
 # based on @github  : https://github.com/KlausQIU
 
-from HuobiUtils import *
+from Huobi.HuobiUtils import *
 
 '''
 Market data API
