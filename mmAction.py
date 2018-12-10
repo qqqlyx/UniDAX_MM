@@ -162,8 +162,8 @@ def get_more_ask_price(code, a_p):
 def get_more_ask_vol(code, a_v):
     new = a_v
     for i in range(10):
-        r = random.uniform(0.6, 1.5) # 量也随机
-        v = a_v[-1]*r
+        r = random.uniform(0.8, 30) # 量也随机, 根据买一卖一量进行扩大
+        v = a_v[0]*r
 
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
@@ -186,8 +186,8 @@ def get_more_bid_price(code, b_p):
 def get_more_bid_vol(code, b_v):
     new = b_v
     for i in range(10):
-        r = random.uniform(0.6, 1.5) # 量也随机
-        v = b_v[-1]*r
+        r = random.uniform(0.8, 30) # 量也随机
+        v = b_v[0]*r
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
     return new
