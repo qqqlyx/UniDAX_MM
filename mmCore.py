@@ -4,7 +4,7 @@
 @github: qqqlyx
 """
 
-# try use pc git
+# try this to remote
 
 import mmAction as mma
 from UniDax import UniDaxServices as uds, Constant as cons
