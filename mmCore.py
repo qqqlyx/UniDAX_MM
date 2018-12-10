@@ -4,7 +4,7 @@
 @github: qqqlyx
 """
 
-# hihi
+# try use pc git
 
 import mmAction as mma
 from UniDax import UniDaxServices as uds, Constant as cons
