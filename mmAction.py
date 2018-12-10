@@ -106,7 +106,7 @@ def mm_trading(huobi_q, log):
 
 # 修改ask下单价格
 def get_ask_price(code, a_p):
-    r = random.uniform(0.01, 0.015)
+    r = random.uniform(0.05, 0.1)
     new = []
     for tem in a_p:
         p = tem*(1+r) # ask订单的price*[1+（0.01-0.015）]随机数，
@@ -126,7 +126,7 @@ def get_ask_vol(code, a_v):
 
 # 修改bid下单价格
 def get_bid_price(code, a_p):
-    r = random.uniform(0.01, 0.015)
+    r = random.uniform(0.05, 0.1)
     new = []
     for tem in a_p:
         p = tem*(1-r) # bid订单的price*[1-（0.01-0.015）随机数]
@@ -162,8 +162,8 @@ def get_more_ask_price(code, a_p):
 def get_more_ask_vol(code, a_v):
     new = a_v
     for i in range(10):
-        r = random.uniform(0.8, 30) # 量也随机, 根据买一卖一量进行扩大
-        v = a_v[0]*r
+        r = random.uniform(0.5, 10) # 量也随机, 根据买一卖一量进行扩大
+        v = (a_v[0] + a_v[1] + a_v[2])* r
 
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
@@ -186,8 +186,8 @@ def get_more_bid_price(code, b_p):
 def get_more_bid_vol(code, b_v):
     new = b_v
     for i in range(10):
-        r = random.uniform(0.8, 30) # 量也随机
-        v = b_v[0]*r
+        r = random.uniform(0.5, 10) # 量也随机
+        v = (b_v[0] + b_v[1] + b_v[2]) * r
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
     return new
