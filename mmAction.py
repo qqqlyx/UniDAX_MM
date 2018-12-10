@@ -96,9 +96,9 @@ def mm_trading(huobi_q, log):
                 r = do_trading(code,ask_p[i],ask_v[i],'SELL',log)
                 od_id.append(r)
 
-            # for i in range(len(bid_p)):
-            #     r = do_trading(code,bid_p[i],bid_v[i],'BUY',log)
-            #     od_id.append(r)
+            for i in range(len(bid_p)):
+                r = do_trading(code,bid_p[i],bid_v[i],'BUY',log)
+                od_id.append(r)
 
         except Exception as e:
             log.error('---->except<mm_trading>: ' + str(code), e)
@@ -197,7 +197,7 @@ def get_more_bid_vol(code, b_v):
 def do_trading(code,price,vol,direction,log):
 
     # test
-    vol = '0.01'
+    #vol = '0.01'
 
     r = uds.create_order(code,direction,price,vol)
     re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
@@ -224,14 +224,14 @@ def mm_cancel_all(stock_list, log):
 
         if all_order['data']['count'] > 0:
             for order in all_order['data']['resultList']:
-                if order['status'] == 1:
-                    id = str(order['id'])
-                    r = uds.cancel_order(code, id)
-                    re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
-                    # 打印log
-                    if re['msg'] != 'suc':
-                        log.error(re)
-                    else:
-                        log.info(re)
+                #if order['status'] == 1:
+                id = str(order['id'])
+                r = uds.cancel_order(code, id)
+                re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
+                # 打印log
+                if re['msg'] != 'suc':
+                    log.error(re)
+                else:
+                    log.info(re)
 
     return

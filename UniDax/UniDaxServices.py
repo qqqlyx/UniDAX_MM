@@ -200,7 +200,7 @@ def cancel_order(symbol, order_id):
         'Content-Type': 'application/x-www-form-urlencoded'}
 
     urllib3.disable_warnings()
-    r = requests.post(url=url, data=dic, headers=headers)
+    r = requests.post(url=url, data=dic, headers=headers, verify=False)
     return r.text
 
 
