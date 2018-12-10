@@ -221,7 +221,7 @@ def account():
 
 
 # 获取全部成交记录
-def all_trade(symbol,pageSize='10000', page='1'):
+def all_trade(symbol, pageSize='10000', page='1'):
     url = '/open/api/all_trade?'
 
     api_key = APIKEY
