@@ -212,26 +212,39 @@ def do_trading(code,price,vol,direction,log):
 
 
 # 撤掉UniDAX全部挂单
-def mm_cancel_all(stock_list, log):
+def mm_cancel_all(stock_list, all_order, log):
     for code in stock_list:
-        all_order = uds.new_order(code)
+        # 如果报单的key中有该代码，则进入撤单
+        if all_order.__contains__(code):
+            orders = all_order[code]
 
-        # 打印log
-        if all_order['msg'] != 'suc':
-            log.error(all_order)
-        else:
-            log.info(all_order)
-
-        if all_order['data']['count'] > 0:
-            for order in all_order['data']['resultList']:
-                #if order['status'] == 1:
-                id = str(order['id'])
-                r = uds.cancel_order(code, id)
-                re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
-                # 打印log
-                if re['msg'] != 'suc':
-                    log.error(re + 'code: ' + code)
-                else:
-                    log.error(re + 'code: ' + code)
+            if orders['data']['count'] > 0:
+                for order in orders['data']['resultList']:
+                    #if order['status'] == 1:
+                    id = str(order['id'])
+                    r = uds.cancel_order(code, id)
+                    re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
+                    # 打印log
+                    if re['msg'] != 'suc':
+                        log.error(re + 'code: ' + code)
+                    else:
+                        log.error(re + 'code: ' + code)
 
     return
+
+# 获取全部订单
+def mm_get_all_order(stock_list, log):
+    all_order = {}
+    for code in stock_list:
+        orders = uds.new_order(code)
+
+        # 打印log
+        if orders['msg'] != 'suc':
+            log.error(orders)
+        else:
+            log.info(orders)
+
+        # 记录orders
+        all_order[code] = orders
+
+    return all_order

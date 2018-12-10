@@ -5,3 +5,6 @@
 .idea/misc.xml
 .idea/UniDAX_MM.iml
 .idea/workspace.xml
+*.pyc
+UniDax/__pycache__/UniDaxServices.cpython-36.pyc
+*.pyc

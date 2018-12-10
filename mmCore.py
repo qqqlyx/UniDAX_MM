@@ -24,12 +24,15 @@ def core_timer():
     # log
     global run_count
     log.warning('Start MM Action, ' + str(run_count))
-    # 全撤单
-    mma.mm_cancel_all(stock_list, log)
+    # 修正逻辑：先记录所有单号，接着进行报单，最后再撤上一批报单
+    all_order = mma.mm_get_all_order(stock_list, log)
     # 获取火币深度行情
     huobi_quota = mma.get_huobi_depth(stock_list, log)
     # 进行报单
     mma.mm_trading(huobi_quota, log)
+    # 最后再删上一次报单
+    mma.mm_cancel_all(stock_list, all_order, log)
+
     # 定时循环
     global timer
     timer = threading.Timer(15, core_timer)
