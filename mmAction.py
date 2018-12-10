@@ -149,7 +149,7 @@ def get_bid_vol(code, b_v):
 def get_more_ask_price(code, a_p):
     new = a_p
     for i in range(10):
-        r = random.randint(0, 4) # 每一单1,2,3中随机跳
+        r = random.randint(0, 6) # 每一单1,2,3,4,5中随机跳
         precis = cons.get_precision(code, 'price')
         tick = 1/(pow(10,precis))
         p = a_p[-1] + r * tick
@@ -162,7 +162,7 @@ def get_more_ask_price(code, a_p):
 def get_more_ask_vol(code, a_v):
     new = a_v
     for i in range(10):
-        r = random.uniform(0.5, 1.3) # 量也随机
+        r = random.uniform(0.6, 1.5) # 量也随机
         v = a_v[-1]*r
 
         v = round(v, cons.get_precision(code, 'volume'))
@@ -173,7 +173,7 @@ def get_more_ask_vol(code, a_v):
 def get_more_bid_price(code, b_p):
     new = b_p
     for i in range(10):
-        r = random.randint(0, 4) # 每一单1,2,3中随机跳
+        r = random.randint(0, 6) # 每一单1,2,3,4,5中随机跳
         precis = cons.get_precision(code, 'price')
         tick = 1/(pow(10,precis))
         p = b_p[-1] - r * tick
@@ -186,7 +186,7 @@ def get_more_bid_price(code, b_p):
 def get_more_bid_vol(code, b_v):
     new = b_v
     for i in range(10):
-        r = random.uniform(0.5, 1.3) # 量也随机
+        r = random.uniform(0.6, 1.5) # 量也随机
         v = b_v[-1]*r
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
