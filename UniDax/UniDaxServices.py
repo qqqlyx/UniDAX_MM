@@ -218,3 +218,24 @@ def account():
     url += '&time=' + time
     url += '&sign=' + sign
     return getUrlContent(url)
+
+
+# 获取全部成交记录
+def all_trade(symbol,pageSize='10000', page='1'):
+    url = '/open/api/all_trade?'
+
+    api_key = APIKEY
+    secret = SECRET
+    time = getTime()
+
+    dic = {'api_key': api_key, 'time': time, 'symbol': symbol, 'pageSize': pageSize, 'page': page}
+    sort = sorted(dic.items(), key=lambda item: item[0])
+    string = ''
+    for tem in sort:
+        string += tem[0] + tem[1]
+        url += tem[0] + '=' + tem[1] + '&'
+
+    sign = getMD5(string + secret)
+    url += 'sign=' + sign
+    return getUrlContent(url)
+
