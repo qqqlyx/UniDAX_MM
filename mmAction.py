@@ -116,7 +116,7 @@ def get_ask_price(code, a_p):
 
 # 修改ask下单数量
 def get_ask_vol(code, a_v):
-    r = random.uniform(0.015, 0.05)
+    r = random.uniform(0.05, 0.1)
     new = []
     for tem in a_v:
         v = tem * r  # amount*（0.015-0.05)的范围随机数
@@ -136,7 +136,7 @@ def get_bid_price(code, a_p):
 
 # 修改bid下单数量
 def get_bid_vol(code, b_v):
-    r = random.uniform(0.015, 0.05)
+    r = random.uniform(0.05, 0.1)
     new = []
     for tem in b_v:
         v = tem * r  # amount*（0.015-0.05)的范围随机数
@@ -226,9 +226,10 @@ def mm_cancel_all(stock_list, all_order, log):
                     re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
                     # 打印log
                     if re['msg'] != 'suc':
-                        log.error(re + 'code: ' + code)
+                        log.error('(mmAction.mm_cancel_all): code: ' + code)
+                        log.error(re)
                     else:
-                        log.error(re + 'code: ' + code)
+                        log.info(re)
 
     return
 

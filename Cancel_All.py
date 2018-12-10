@@ -22,5 +22,3 @@ for code in codes:
             # 打印log
             if re['msg'] != 'suc':
                 print(re)
-            else:
-                print(re)
