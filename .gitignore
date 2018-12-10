@@ -1,3 +1,7 @@
 
 *.iml
 *.xml
+*.iml
+.idea/misc.xml
+.idea/UniDAX_MM.iml
+.idea/workspace.xml
