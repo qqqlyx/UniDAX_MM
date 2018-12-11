@@ -16,7 +16,7 @@ import datetime
 
 # 参与报价币种
 # stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
-stock_list = ['ethusdt']
+stock_list = ['ethbtc']
 run_count = 1
 # stock_list = ['bchusdt']
 
