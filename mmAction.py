@@ -198,17 +198,23 @@ def do_trading(code,price,vol,direction,log):
 
     # test
     #vol = '0.01'
-
-    r = uds.create_order(code,direction,price,vol)
-    re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
+    try:
+        r = uds.create_order(code, direction, price, vol)
+        re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
+    except Exception as e:
+        log.error('---->except<do_trading>: ' + str(code), e)
 
     # 打印log
     if re['msg'] != 'suc':
         log.error(re)
+        result = '000'
     else:
         log.info(re)
+        result = re['data']['order_id']
 
-    return re['data']['order_id']
+    return result
+
+
 
 
 # 撤掉UniDAX全部挂单
