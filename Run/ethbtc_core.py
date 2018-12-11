@@ -12,11 +12,10 @@ import threading
 import logging
 import json
 from pprint import pprint
-import datetime
 
 # 参与报价币种
 # stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
-stock_list = ['btcusdt']
+stock_list = ['ethusdt']
 run_count = 1
 # stock_list = ['bchusdt']
 
@@ -49,9 +48,7 @@ def set_log():
     logger = logging.getLogger()
     logger.setLevel(logging.DEBUG)
     # 创建一个handler，用于写入日志文件
-    date = datetime.datetime.now().strftime('%Y%m%d')
-    logname = stock_list[0] + '_' + date
-    fh = logging.FileHandler('log//' + logname)
+    fh = logging.FileHandler('test.log')
     #fh = logging.FileHandler('D://test.log')
     fh.setLevel(logging.DEBUG)
     # 再创建一个handler，用于输出到控制台
