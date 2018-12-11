@@ -12,7 +12,7 @@ codes = ['etcusdt', 'ethusdt']
 for code in codes:
     all_order = uds.new_order(code)
 # t = uds.account()
-    pprint(all_order)
+    #pprint(all_order)
     if all_order['data']['count'] > 0:
         for order in all_order['data']['resultList']:
         # if order['status'] == 1:

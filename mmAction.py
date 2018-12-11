@@ -106,7 +106,7 @@ def mm_trading(huobi_q, log):
 
 # 修改ask下单价格
 def get_ask_price(code, a_p):
-    r = random.uniform(0.05, 0.1)
+    r = random.uniform(0.01, 0.015)
     new = []
     for tem in a_p:
         p = tem*(1+r) # ask订单的price*[1+（0.01-0.015）]随机数，
@@ -126,7 +126,7 @@ def get_ask_vol(code, a_v):
 
 # 修改bid下单价格
 def get_bid_price(code, a_p):
-    r = random.uniform(0.05, 0.1)
+    r = random.uniform(0.01, 0.015)
     new = []
     for tem in a_p:
         p = tem*(1-r) # bid订单的price*[1-（0.01-0.015）随机数]
