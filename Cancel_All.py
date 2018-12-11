@@ -8,7 +8,7 @@ from UniDax import UniDaxServices as uds
 from pprint import pprint
 import json
 
-codes = ['etcusdt', 'ethusdt']
+codes = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
 for code in codes:
     all_order = uds.new_order(code)
 # t = uds.account()
