@@ -15,7 +15,8 @@ from pprint import pprint
 
 # 参与报价币种
 # stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
-stock_list = ['etcusdt', 'ethusdt']
+stock_list = []
+run_count = 1
 # stock_list = ['bchusdt']
 
 
@@ -65,11 +66,15 @@ def set_log():
     return logger
 
 # log等级 info < warning < error
-
-run_count = 1
 log = set_log()
-timer = threading.Timer(1, core_timer)
-timer.start()
+
+# 开始程序
+def start_mmCore(s_l):
+    global stock_list
+    stock_list = s_l
+    timer = threading.Timer(1, core_timer)
+    timer.start()
+
 
 # 深度数据格式
 # 例，huobi_quota['btcusdt']['tick']['asks'][0][0] = 卖一价
