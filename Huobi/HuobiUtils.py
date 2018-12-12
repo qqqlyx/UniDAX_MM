@@ -13,8 +13,8 @@ import requests
 
 # 此处填写APIKEY
 
-ACCESS_KEY = '3f52efd4-0e91d987-762bfc37-0a0e4'
-SECRET_KEY = '4083f91d-e4a22806-e497490d-348bb'
+ACCESS_KEY = '0297598a-4ae33040-038fe141-ea2e2'
+SECRET_KEY = '52aa0864-ced17573-45f754ba-831cb'
 
 # API 请求地址
 MARKET_URL = "https://api.huobi.pro"

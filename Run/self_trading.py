@@ -12,10 +12,11 @@ import logging
 import json
 from pprint import pprint
 import datetime
+import random
 
 # 参与自成交币种
-#stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
-stock_list = ['ethusdt']
+stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
+#stock_list = ['ethusdt']
 run_count = 1
 last_quota = {}
 
@@ -73,20 +74,22 @@ def get_quota():
 def do_self_trading():
     for code in stock_list:
         quota = last_quota[code]
-
-        # 主动卖
-        price = quota['data']['tick']['asks'][2][0]
-        vol = quota['data']['tick']['asks'][1][1]
-        # 下单数量为1/5
-        v = round(vol / 5, cons.get_precision(code, 'volume'))
-        mma.do_trading(code, price, v, 'BUY', log)
-
-        # 主动买
-        price = quota['data']['tick']['bids'][2][0]
-        vol = quota['data']['tick']['bids'][1][1]
-        # 下单数量为1/5
-        v = round(vol / 5, cons.get_precision(code, 'volume'))
-        mma.do_trading(code, price, v, 'SELL', log)
+        # 在买、卖中随机
+        r = random.randint(0, 3)
+        if r == 1:
+            # 主动卖
+            price = quota['data']['tick']['asks'][2][0]
+            vol = quota['data']['tick']['asks'][1][1]
+            # 下单数量为1/5
+            v = round(vol / 5, cons.get_precision(code, 'volume'))
+            mma.do_trading(code, price, v, 'BUY', log)
+        else:
+            # 主动买
+            price = quota['data']['tick']['bids'][2][0]
+            vol = quota['data']['tick']['bids'][1][1]
+            # 下单数量为1/5
+            v = round(vol / 5, cons.get_precision(code, 'volume'))
+            mma.do_trading(code, price, v, 'SELL', log)
     return
 
 
