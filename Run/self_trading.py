@@ -74,6 +74,10 @@ def get_quota():
 def do_self_trading():
     for code in stock_list:
         quota = last_quota[code]
+        # 如果没有盘口 就不做报单
+        if len(quota) < 2:
+            return
+
         # 在买、卖中随机
         r = random.randint(0, 3)
         if r == 1:
