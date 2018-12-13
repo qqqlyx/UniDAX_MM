@@ -106,7 +106,7 @@ def mm_trading(huobi_q, log):
 
 # 修改ask下单价格
 def get_ask_price(code, a_p):
-    r = random.uniform(0.01, 0.015)
+    r = random.uniform(0.008, 0.01)
     new = []
     for tem in a_p:
         p = tem*(1+r) # ask订单的price*[1+（0.01-0.015）]随机数，
@@ -126,7 +126,7 @@ def get_ask_vol(code, a_v):
 
 # 修改bid下单价格
 def get_bid_price(code, a_p):
-    r = random.uniform(0.01, 0.015)
+    r = random.uniform(0.008, 0.01)
     new = []
     for tem in a_p:
         p = tem*(1-r) # bid订单的price*[1-（0.01-0.015）随机数]
@@ -145,10 +145,10 @@ def get_bid_vol(code, b_v):
     return new
 
 # 填充askprice
-# 现在填充报单是10个
+# 现在填充报单是15个
 def get_more_ask_price(code, a_p):
     new = a_p
-    for i in range(10):
+    for i in range(15):
         r = random.randint(0, 6) # 每一单1,2,3,4,5中随机跳
         precis = cons.get_precision(code, 'price')
         tick = 1/(pow(10,precis))
@@ -161,21 +161,22 @@ def get_more_ask_price(code, a_p):
 # 填充ask vol
 def get_more_ask_vol(code, a_v):
     new = a_v
-    for i in range(10):
-        r = random.uniform(0.5, 10) # 量也随机, 根据买一卖一量进行扩大
-        v = (a_v[0] + a_v[1] + a_v[2])* r
+    for i in range(15):
+        r = random.uniform(0.5, 10)  # 量也随机, 根据买一卖一量进行扩大
+        v = (a_v[0] + a_v[1] + a_v[2]) * r
 
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
     return new
 
-# 填充bidprice
+
+# 填充 bidprice
 def get_more_bid_price(code, b_p):
     new = b_p
-    for i in range(10):
-        r = random.randint(0, 6) # 每一单1,2,3,4,5中随机跳
+    for i in range(15):
+        r = random.randint(0, 6)  # 每一单1,2,3,4,5中随机跳
         precis = cons.get_precision(code, 'price')
-        tick = 1/(pow(10,precis))
+        tick = 1 / (pow(10, precis))
         p = b_p[-1] - r * tick
 
         p = round(p, cons.get_precision(code, 'price'))
@@ -185,7 +186,7 @@ def get_more_bid_price(code, b_p):
 # 填充bid vol
 def get_more_bid_vol(code, b_v):
     new = b_v
-    for i in range(10):
+    for i in range(15):
         r = random.uniform(0.5, 10) # 量也随机
         v = (b_v[0] + b_v[1] + b_v[2]) * r
         v = round(v, cons.get_precision(code, 'volume'))

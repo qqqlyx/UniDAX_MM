@@ -47,7 +47,9 @@ def getUrlContent(tem):
 
 # 获取当前时间戳
 def getTime():
-    return datetime.datetime.now().strftime('%H%M%S%f')
+    #n_t = datetime.datetime.now().strftime('%H%M%S%f')  # 这种方法在0:00-9:59会报错，似乎是因为开头不能为0
+    n_t = '100000000000'  # 时间戳没有用，所以随便找一个代替
+    return n_t
 
 
 '''

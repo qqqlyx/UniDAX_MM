@@ -78,15 +78,15 @@ def do_self_trading():
         r = random.randint(0, 3)
         if r == 1:
             # 主动卖
-            price = quota['data']['tick']['asks'][2][0]
-            vol = quota['data']['tick']['asks'][1][1]
-            # 下单数量为1/5
+            price = quota['data']['tick']['asks'][1][0]
+            vol = quota['data']['tick']['asks'][0][1]
+            # 下单数量为卖一1/5
             v = round(vol / 5, cons.get_precision(code, 'volume'))
             mma.do_trading(code, price, v, 'BUY', log)
         else:
             # 主动买
-            price = quota['data']['tick']['bids'][2][0]
-            vol = quota['data']['tick']['bids'][1][1]
+            price = quota['data']['tick']['bids'][1][0]
+            vol = quota['data']['tick']['bids'][0][1]
             # 下单数量为1/5
             v = round(vol / 5, cons.get_precision(code, 'volume'))
             mma.do_trading(code, price, v, 'SELL', log)
