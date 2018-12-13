@@ -116,7 +116,7 @@ def get_ask_price(code, a_p):
 
 # 修改ask下单数量
 def get_ask_vol(code, a_v):
-    r = random.uniform(0.05, 0.1)
+    r = random.uniform(0.015, 0.05)
     new = []
     for tem in a_v:
         v = tem * r  # amount*（0.015-0.05)的范围随机数
@@ -136,7 +136,7 @@ def get_bid_price(code, a_p):
 
 # 修改bid下单数量
 def get_bid_vol(code, b_v):
-    r = random.uniform(0.05, 0.1)
+    r = random.uniform(0.015, 0.05)
     new = []
     for tem in b_v:
         v = tem * r  # amount*（0.015-0.05)的范围随机数
