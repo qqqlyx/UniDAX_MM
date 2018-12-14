@@ -29,13 +29,15 @@ def core_timer():
     get_quota()
     # 报单
     do_self_trading()
+
+    # log
+    log.warning('End Self-Trading, ' + str(run_count))
+    run_count += 1
+
     # 定时循环
     global timer
     timer = threading.Timer(60, core_timer)
     timer.start()
-    # log
-    log.warning('End Self-Trading, ' + str(run_count))
-    run_count += 1
 
 
 def set_log():

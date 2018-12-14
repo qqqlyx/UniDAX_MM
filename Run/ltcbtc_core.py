@@ -35,13 +35,14 @@ def core_timer():
     # 最后再删上一次报单
     mma.mm_cancel_all(stock_list, all_order, log)
 
+    # log
+    log.warning('End MM Action, ' + str(run_count))
+    run_count += 1
+
     # 定时循环
     global timer
     timer = threading.Timer(0, core_timer)
     timer.start()
-    # log
-    log.warning('End MM Action, ' + str(run_count))
-    run_count += 1
 
 
 def set_log():
