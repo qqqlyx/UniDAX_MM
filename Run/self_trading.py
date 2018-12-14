@@ -78,6 +78,9 @@ def do_self_trading():
         if len(quota['data']['tick']['asks']) < 2:
             return
 
+        if len(quota['data']['tick']['bids']) < 2:
+            return
+
         # 在买、卖中随机
         r = random.randint(0, 3)
         if r == 1:
