@@ -20,9 +20,14 @@ import json
 # unidax_url = "https://testwww.unidax.com/exchange-open-api"
 
 # test 机器人
+# APIKEY = '8595327a8947cf06492285588d761e01'
+# SECRET = 'b2a9019765c0a64cc54214581c7366cd'
+# unidax_url = "https://testwww.unidax.com/exchange-open-api"
+
+# 机器人
 APIKEY = '8595327a8947cf06492285588d761e01'
 SECRET = 'b2a9019765c0a64cc54214581c7366cd'
-unidax_url = "https://testwww.unidax.com/exchange-open-api"
+unidax_url = "https://api.unidax.com/exchange-open-api"
 
 
 # 计算md5加密
