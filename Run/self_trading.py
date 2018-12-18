@@ -7,6 +7,7 @@
 # 用来自成交，刷成交单状况
 import mmAction as mma
 from UniDax import UniDaxServices as uds, Constant as cons
+from Huobi import HuobiServices as hbs
 import threading
 import logging
 import json
@@ -75,13 +76,49 @@ def get_quota():
 # 按照买二卖二报价
 def do_self_trading():
     for code in stock_list:
-        quota = last_quota[code]
-        # 如果没有盘口 就不做报单
-        if len(quota['data']['tick']['asks']) < 10:
+
+        # 使用火币报价
+        quota_hb = hbs.get_depth(code, 'step0')
+        a = 1
+        if quota_hb['status'] != 'ok':
             return
 
-        if len(quota['data']['tick']['bids']) < 10:
+        # 价格使用火币的价格进行计算
+        price1 = float(quota_hb['tick']['asks'][0][0])
+        price2 = float(quota_hb['tick']['bids'][0][0])
+        price = (price1 + price2) / 2
+
+        # 量使用UniDAX的量
+        quota_uni = last_quota[code]
+        # 如果没有盘口 就不做报单
+        if len(quota_uni['data']['tick']['asks']) < 5:
             return
+
+        if len(quota_uni['data']['tick']['bids']) < 5:
+            return
+
+        vol1 = quota_uni['data']['tick']['asks'][0][1]
+        vol2 = quota_uni['data']['tick']['bids'][0][1]
+        r = random.uniform(0, 1)
+        vol = (vol1 + vol2) * r
+
+        # 把价格和量格式化
+        v = round(vol, cons.get_precision(code, 'volume'))
+        p = round(price, cons.get_precision(code, 'price'))
+
+        # 报单
+        mma.do_trading(code, p, v, 'BUY', log)
+        mma.do_trading(code, p, v, 'SELL', log)
+
+
+
+        # quota = last_quota[code]
+        # # 如果没有盘口 就不做报单
+        # if len(quota['data']['tick']['asks']) < 10:
+        #     return
+        #
+        # if len(quota['data']['tick']['bids']) < 10:
+        #     return
 
         # # 在买、卖中随机
         # r = random.randint(0, 3)
@@ -100,17 +137,19 @@ def do_self_trading():
         #     v = round(vol / 5, cons.get_precision(code, 'volume'))
         #     mma.do_trading(code, price, v, 'SELL', log)
 
-        # 报价
-        price1 = float(quota['data']['tick']['asks'][1][0])
-        price2 = float(quota['data']['tick']['bids'][1][0])
-        price = (price1 + price2) / 2
-        vol1 = quota['data']['tick']['asks'][0][1]
-        vol2 = quota['data']['tick']['bids'][0][1]
-        vol = (vol1 + vol2) * 0.4
-        v = round(vol, cons.get_precision(code, 'volume'))
-        p = round(price, cons.get_precision(code, 'price'))
-        mma.do_trading(code, p, v, 'BUY', log)
-        mma.do_trading(code, p, v, 'SELL', log)
+        # UniDAX盘口报价
+        # price1 = float(quota['data']['tick']['asks'][1][0])
+        # price2 = float(quota['data']['tick']['bids'][1][0])
+        # price = (price1 + price2) / 2
+        # vol1 = quota['data']['tick']['asks'][0][1]
+        # vol2 = quota['data']['tick']['bids'][0][1]
+        # vol = (vol1 + vol2) * 0.4
+        # v = round(vol, cons.get_precision(code, 'volume'))
+        # p = round(price, cons.get_precision(code, 'price'))
+        # mma.do_trading(code, p, v, 'BUY', log)
+        # mma.do_trading(code, p, v, 'SELL', log)
+
+
 
     return
 
