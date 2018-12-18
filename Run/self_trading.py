@@ -77,28 +77,41 @@ def do_self_trading():
     for code in stock_list:
         quota = last_quota[code]
         # 如果没有盘口 就不做报单
-        if len(quota['data']['tick']['asks']) < 2:
+        if len(quota['data']['tick']['asks']) < 10:
             return
 
-        if len(quota['data']['tick']['bids']) < 2:
+        if len(quota['data']['tick']['bids']) < 10:
             return
 
-        # 在买、卖中随机
-        r = random.randint(0, 3)
-        if r == 1:
-            # 主动卖
-            price = quota['data']['tick']['asks'][1][0]
-            vol = quota['data']['tick']['asks'][0][1]
-            # 下单数量为卖一1/5
-            v = round(vol / 5, cons.get_precision(code, 'volume'))
-            mma.do_trading(code, price, v, 'BUY', log)
-        else:
-            # 主动买
-            price = quota['data']['tick']['bids'][1][0]
-            vol = quota['data']['tick']['bids'][0][1]
-            # 下单数量为1/5
-            v = round(vol / 5, cons.get_precision(code, 'volume'))
-            mma.do_trading(code, price, v, 'SELL', log)
+        # # 在买、卖中随机
+        # r = random.randint(0, 3)
+        # if r == 1:
+        #     # 主动卖
+        #     price = quota['data']['tick']['asks'][1][0]
+        #     vol = quota['data']['tick']['asks'][0][1]
+        #     # 下单数量为卖一1/5
+        #     v = round(vol / 5, cons.get_precision(code, 'volume'))
+        #     mma.do_trading(code, price, v, 'BUY', log)
+        # else:
+        #     # 主动买
+        #     price = quota['data']['tick']['bids'][1][0]
+        #     vol = quota['data']['tick']['bids'][0][1]
+        #     # 下单数量为1/5
+        #     v = round(vol / 5, cons.get_precision(code, 'volume'))
+        #     mma.do_trading(code, price, v, 'SELL', log)
+
+        # 报价
+        price1 = float(quota['data']['tick']['asks'][1][0])
+        price2 = float(quota['data']['tick']['bids'][1][0])
+        price = (price1 + price2) / 2
+        vol1 = quota['data']['tick']['asks'][0][1]
+        vol2 = quota['data']['tick']['bids'][0][1]
+        vol = (vol1 + vol2) * 0.4
+        v = round(vol, cons.get_precision(code, 'volume'))
+        p = round(price, cons.get_precision(code, 'price'))
+        mma.do_trading(code, p, v, 'BUY', log)
+        mma.do_trading(code, p, v, 'SELL', log)
+
     return
 
 

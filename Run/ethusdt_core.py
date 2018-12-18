@@ -41,7 +41,7 @@ def core_timer():
 
     # 定时循环
     global timer
-    timer = threading.Timer(0, core_timer)
+    timer = threading.Timer(10, core_timer)
     timer.start()
 
 

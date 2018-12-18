@@ -9,6 +9,7 @@ from pprint import pprint
 import json
 
 codes = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
+#codes = ['ltcbtc','ltcusdt']
 for code in codes:
     all_order = uds.new_order(code)
 # t = uds.account()
