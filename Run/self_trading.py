@@ -5,13 +5,11 @@
 """
 
 # 用来自成交，刷成交单状况
-import mmAction as mma
+from MM import MM_Utils as mma
 from UniDax import UniDaxServices as uds, Constant as cons
 from Huobi import HuobiServices as hbs
 import threading
 import logging
-import json
-from pprint import pprint
 import datetime
 import random
 import time

@@ -9,21 +9,22 @@ from Huobi import HuobiServices as hbs
 from UniDax import UniDaxServices as uds, Constant as cons
 import json
 import random
+import pprint
 
 # 获取火币行情
-def get_huobi_depth(s_l, log):
+def get_huobi_depth(s_l):
     huobi_quota = {}
     try:
         for stock in s_l:
             r = hbs.get_depth(stock,'step0')
             huobi_quota[stock] = r
     except Exception as e:
-        log.error('---->except<get_huobi_depth>', e)
+        print('---->except<get_huobi_depth>', e)
 
     return huobi_quota
 
 # 依据火币行情进行下单
-def mm_trading(huobi_q, log):
+def mm_trading(huobi_q):
     # 遍历所有币种行情
     for code in huobi_q:
         try:
@@ -67,11 +68,11 @@ def mm_trading(huobi_q, log):
 
             # 火币行情数据
             if len(ask_p) < max_count:
-                log.error('火币行情数据缺少: ' + str(code))
+                print('火币行情数据缺少: ' + str(code))
 
-            for i in range(len(ask_p)):
-                log.info('huobi_quota_ASK: ' + str(code) + ', ' + str(ask_p[i]) + ', ' + str(ask_v[i]))
-                log.info('huobi_quota_BID: ' + str(code) + ', ' + str(bid_p[i]) + ', ' + str(bid_v[i]))
+            # for i in range(len(ask_p)):
+            #     log.info('huobi_quota_ASK: ' + str(code) + ', ' + str(ask_p[i]) + ', ' + str(ask_v[i]))
+            #     log.info('huobi_quota_BID: ' + str(code) + ', ' + str(bid_p[i]) + ', ' + str(bid_v[i]))
 
 
             # 修改下单数据
@@ -86,22 +87,22 @@ def mm_trading(huobi_q, log):
             bid_p = get_more_bid_price(code, bid_p)
             bid_v = get_more_bid_vol(code, bid_v)
 
-            for i in range(len(ask_p)):
-                log.info('mm_ASK: ' + str(code) + ', ' + str(ask_p[i]) + ', ' + str(ask_v[i]))
-                log.info('mm_BID: ' + str(code) + ', ' + str(bid_p[i]) + ', ' + str(bid_v[i]))
+            # for i in range(len(ask_p)):
+            #     log.info('mm_ASK: ' + str(code) + ', ' + str(ask_p[i]) + ', ' + str(ask_v[i]))
+            #     log.info('mm_BID: ' + str(code) + ', ' + str(bid_p[i]) + ', ' + str(bid_v[i]))
 
             # 实际交易下单
             od_id = []
             for i in range(len(ask_p)):
-                r = do_trading(code,ask_p[i],ask_v[i],'SELL',log)
+                r = do_trading(code,ask_p[i],ask_v[i],'SELL')
                 od_id.append(r)
 
             for i in range(len(bid_p)):
-                r = do_trading(code,bid_p[i],bid_v[i],'BUY',log)
+                r = do_trading(code,bid_p[i],bid_v[i],'BUY')
                 od_id.append(r)
 
         except Exception as e:
-            log.error('---->except<mm_trading>: ' + str(code), e)
+            print('---->except<mm_trading>: ' + str(code), e)
     return
 
 # 修改ask下单价格
@@ -195,7 +196,7 @@ def get_more_bid_vol(code, b_v):
 
 
 # 实际下单，返回订单id
-def do_trading(code, price, vol, direction, log):
+def do_trading(code, price, vol, direction):
 
     # test
     #vol = '0.01'
@@ -203,14 +204,14 @@ def do_trading(code, price, vol, direction, log):
         r = uds.create_order(code, direction, price, vol)
         re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
     except Exception as e:
-        log.error('---->except<do_trading>: ' + str(code), e)
+        print('---->except<do_trading>: ' + str(code), e)
 
     # 打印log
     if re['msg'] != 'suc':
-        log.error(re)
+        print(re)
         result = '000'
     else:
-        log.info(re)
+        #log.info(re)
         result = re['data']['order_id']
 
     return result
@@ -219,7 +220,7 @@ def do_trading(code, price, vol, direction, log):
 
 
 # 撤掉UniDAX全部挂单
-def mm_cancel_all(stock_list, all_order, log):
+def mm_cancel_all(stock_list, all_order):
     for code in stock_list:
         # 如果报单的key中有该代码，则进入撤单
         if all_order.__contains__(code):
@@ -233,24 +234,23 @@ def mm_cancel_all(stock_list, all_order, log):
                     re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
                     # 打印log
                     if re['msg'] != 'suc':
-                        log.error('(mmAction.mm_cancel_all): code: ' + code)
-                        log.error(re)
-                    else:
-                        log.info(re)
+                        print('(mmAction.mm_cancel_all): code: ' + code)
+                        print(re)
+                    # else:
+                    #     log.info(re)
 
     return
 
 # 获取全部订单
-def mm_get_all_order(stock_list, log):
+def mm_get_all_order(stock_list):
     all_order = {}
     for code in stock_list:
         orders = uds.new_order(code)
-
-        # 打印log
-        if orders['msg'] != 'suc':
-            log.error(orders)
-        else:
-            log.info(orders)
+        # # 打印log
+        # if orders['msg'] != 'suc':
+        #     log.error(orders)
+        # else:
+        #     log.info(orders)
 
         # 记录orders
         all_order[code] = orders
