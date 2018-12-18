@@ -13,7 +13,7 @@ import sys
 import subprocess
 
 # 参与报价币种
-path = 'D:\\GitHub\\UniDAX_MM\\MM\\ST_Core.py'
+path = 'D:\\Robin\\UniDAX_MM\\MM\\ST_Core.py'
 
 
 class st_action():
@@ -30,10 +30,13 @@ class st_action():
             while True:
                 time.sleep(5)
                 self.poll = self.p.poll() #判断程序进程是否存在，None：表示程序正在运行 其他值：表示程序已退出
+
+                now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
                 if self.poll is None:
-                    print("Self-Trading : NORMAL")
+                    print(now_time + "  Self-Trading : NORMAL")
                 else:
-                    print("Self-Trading : STOP,TRY RE-OPEN")
+                    print(now_time + "  Self-Trading : STOP,TRY RE-OPEN")
                     self.run()
         except Exception as e:
             print('---->except<st_action>', e)

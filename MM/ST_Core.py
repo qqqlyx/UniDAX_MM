@@ -21,7 +21,8 @@ while True:
         price = (price1 + price2) / 2
 
         # 量使用UniDAX的量
-        quota_uni = last_quota[code]
+        quota_uni = uds.market_dept(code, 'step0')
+
         # 如果没有盘口 就不做报单
         if len(quota_uni['data']['tick']['asks']) < 4:
             break

@@ -14,7 +14,7 @@ import subprocess
 
 # 参与报价币种
 code = 'etcusdt'
-path = 'D:\\GitHub\\UniDAX_MM\\MM\\MM_Core.py'
+path = 'D:\\Robin\\UniDAX_MM\\MM\\MM_Core.py'
 
 
 class mm_action():
@@ -32,10 +32,12 @@ class mm_action():
             while True:
                 time.sleep(5)
                 self.poll = self.p.poll() #判断程序进程是否存在，None：表示程序正在运行 其他值：表示程序已退出
+
+                now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
                 if self.poll is None:
-                    print(code + ": NORMAL")
+                    print(now_time + '  ' + code + ": NORMAL")
                 else:
-                    print(code + ": STOP,TRY RE-OPEN")
+                    print(now_time + '  ' + code + ": STOP,TRY RE-OPEN")
                     self.run()
         except Exception as e:
             print('---->except<mm_action>', e)
