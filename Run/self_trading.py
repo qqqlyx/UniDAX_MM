@@ -14,6 +14,7 @@ import json
 from pprint import pprint
 import datetime
 import random
+import time
 
 # 参与自成交币种
 stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
@@ -106,10 +107,14 @@ def do_self_trading():
         v = round(vol, cons.get_precision(code, 'volume'))
         p = round(price, cons.get_precision(code, 'price'))
 
-        # 报单
+        # 报买单
         mma.do_trading(code, p, v, 'BUY', log)
-        mma.do_trading(code, p, v, 'SELL', log)
 
+        # 稍微等一下 避免报单过快
+        time.sleep(0.1)
+
+        # 报卖单
+        mma.do_trading(code, p, v, 'SELL', log)
 
 
         # quota = last_quota[code]
