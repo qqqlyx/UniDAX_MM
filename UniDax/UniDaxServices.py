@@ -9,9 +9,9 @@ import json
 
 
 # 正式账户的api信息
-# APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'
-# SECRET = '09bb015463410a1844066df46a223db3'
-# unidax_url = "https://api.unidax.com/exchange-open-api"
+APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'
+SECRET = '09bb015463410a1844066df46a223db3'
+unidax_url = "https://api.unidax.com/exchange-open-api"
 
 
 # test
@@ -19,15 +19,15 @@ import json
 # SECRET = '6f106b0a2f3f01de5beb049dfb4e07e2'
 # unidax_url = "https://testwww.unidax.com/exchange-open-api"
 
-# test 机器人
+# # test 机器人
 # APIKEY = '8595327a8947cf06492285588d761e01'
 # SECRET = 'b2a9019765c0a64cc54214581c7366cd'
 # unidax_url = "https://testwww.unidax.com/exchange-open-api"
 
 # 机器人
-APIKEY = '8595327a8947cf06492285588d761e01'
-SECRET = 'b2a9019765c0a64cc54214581c7366cd'
-unidax_url = "https://api.unidax.com/exchange-open-api"
+# APIKEY = '8595327a8947cf06492285588d761e01'
+# SECRET = 'b2a9019765c0a64cc54214581c7366cd'
+# unidax_url = "https://api.unidax.com/exchange-open-api"
 
 
 # 计算md5加密
