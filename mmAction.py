@@ -195,7 +195,7 @@ def get_more_bid_vol(code, b_v):
 
 
 # 实际下单，返回订单id
-def do_trading(code,price,vol,direction,log):
+def do_trading(code, price, vol, direction, log):
 
     # test
     #vol = '0.01'

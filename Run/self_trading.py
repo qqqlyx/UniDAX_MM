@@ -116,7 +116,7 @@ def do_self_trading():
         # 报卖单
         mma.do_trading(code, p, v, 'SELL', log)
 
-
+        #
         # quota = last_quota[code]
         # # 如果没有盘口 就不做报单
         # if len(quota['data']['tick']['asks']) < 10:
@@ -127,6 +127,7 @@ def do_self_trading():
 
         # # 在买、卖中随机
         # r = random.randint(0, 3)
+
         # if r == 1:
         #     # 主动卖
         #     price = quota['data']['tick']['asks'][1][0]
@@ -153,9 +154,6 @@ def do_self_trading():
         # p = round(price, cons.get_precision(code, 'price'))
         # mma.do_trading(code, p, v, 'BUY', log)
         # mma.do_trading(code, p, v, 'SELL', log)
-
-
-
     return
 
 
