@@ -24,14 +24,14 @@ last_quota = {}
 def core_timer():
     # log
     global run_count
-    log.warning('Start Self-Trading, ' + str(run_count))
+    #log.warning('Start Self-Trading, ' + str(run_count))
     # 读取市场行情
     get_quota()
     # 报单
     do_self_trading()
 
     # log
-    log.warning('End Self-Trading, ' + str(run_count))
+    #log.warning('End Self-Trading, ' + str(run_count))
     run_count += 1
 
     # 定时循环
@@ -40,29 +40,29 @@ def core_timer():
     timer.start()
 
 
-def set_log():
-    # 创建一个logger
-    logger = logging.getLogger()
-    logger.setLevel(logging.DEBUG)
-    # 创建一个handler，用于写入日志文件
-    date = datetime.datetime.now().strftime('%Y%m%d')
-    logname = 'selfTrading_' + date
-    fh = logging.FileHandler('log//' + logname)
-    #fh = logging.FileHandler('D://test.log')
-    fh.setLevel(logging.DEBUG)
-    # 再创建一个handler，用于输出到控制台
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.WARNING)
-    # 定义handler的输出格式
-    formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
-    fh.setFormatter(formatter)
-    ch.setFormatter(formatter)
-    # 给logger添加handler
-    logger.addHandler(fh)
-    logger.addHandler(ch)
-    # 记录一条日志
-    logger.info('robin mm begin')
-    return logger
+# def set_log():
+#     # 创建一个logger
+#     logger = logging.getLogger()
+#     logger.setLevel(logging.DEBUG)
+#     # 创建一个handler，用于写入日志文件
+#     date = datetime.datetime.now().strftime('%Y%m%d')
+#     logname = 'selfTrading_' + date
+#     fh = logging.FileHandler('log//' + logname)
+#     #fh = logging.FileHandler('D://test.log')
+#     fh.setLevel(logging.DEBUG)
+#     # 再创建一个handler，用于输出到控制台
+#     ch = logging.StreamHandler()
+#     ch.setLevel(logging.WARNING)
+#     # 定义handler的输出格式
+#     formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
+#     fh.setFormatter(formatter)
+#     ch.setFormatter(formatter)
+#     # 给logger添加handler
+#     logger.addHandler(fh)
+#     logger.addHandler(ch)
+#     # 记录一条日志
+#     logger.info('robin mm begin')
+#     return logger
 
 def get_quota():
     global last_quota
@@ -106,13 +106,13 @@ def do_self_trading():
         p = round(price, cons.get_precision(code, 'price'))
 
         # 报买单
-        mma.do_trading(code, p, v, 'BUY', log)
+        mma.do_trading(code, p, v, 'BUY')
 
         # 稍微等一下 避免报单过快
         time.sleep(0.1)
 
         # 报卖单
-        mma.do_trading(code, p, v, 'SELL', log)
+        mma.do_trading(code, p, v, 'SELL')
 
         #
         # quota = last_quota[code]
@@ -156,6 +156,6 @@ def do_self_trading():
 
 
 # log等级 info < warning < error
-log = set_log()
+# log = set_log()
 timer = threading.Timer(1, core_timer)
 timer.start()
