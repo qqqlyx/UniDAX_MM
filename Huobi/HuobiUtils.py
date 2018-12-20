@@ -10,11 +10,12 @@ import urllib
 import urllib.parse
 import urllib.request
 import requests
+from MM import Tokens
 
 # 此处填写APIKEY
 
-ACCESS_KEY = '0297598a-4ae33040-038fe141-ea2e2'
-SECRET_KEY = '52aa0864-ced17573-45f754ba-831cb'
+ACCESS_KEY = Tokens.Huobi_ACCESS_KEY
+SECRET_KEY = Tokens.Huobi_SECRET_KEY
 
 # API 请求地址
 MARKET_URL = "https://api.huobi.pro"

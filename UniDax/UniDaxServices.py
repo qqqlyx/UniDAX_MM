@@ -3,10 +3,8 @@ UniDAX OpenAPI
 '''
 import hashlib
 import requests
-import datetime
 import urllib3
-import json
-
+from MM import Tokens
 
 # 正式账户的api信息
 # APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'
@@ -25,9 +23,11 @@ import json
 # unidax_url = "https://testwww.unidax.com/exchange-open-api"
 
 # 机器人
-APIKEY = '8595327a8947cf06492285588d761e01'
-SECRET = 'b2a9019765c0a64cc54214581c7366cd'
-unidax_url = "https://api.unidax.com/exchange-open-api"
+
+
+APIKEY = Tokens.APIKEY
+SECRET = Tokens.UniDAX_SECRET
+unidax_url = Tokens.UniDAX_unidax_url
 
 
 # 计算md5加密
