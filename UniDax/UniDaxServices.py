@@ -25,7 +25,7 @@ from MM import Tokens
 # 机器人
 
 
-APIKEY = Tokens.APIKEY
+APIKEY = Tokens.UniDAX_APIKEY
 SECRET = Tokens.UniDAX_SECRET
 unidax_url = Tokens.UniDAX_unidax_url
 
