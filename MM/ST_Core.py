@@ -46,7 +46,7 @@ while True:
         mmu.do_trading(code, p, v, 'BUY')
 
         # 稍微等一下 避免报单过快
-        time.sleep(0.1)
+        time.sleep(0.01)
 
         # 报卖单
         mmu.do_trading(code, p, v, 'SELL')
@@ -54,7 +54,7 @@ while True:
         # 报单后等随机时间，以使得各合约成交时间不同
         # 等待时间根据‘一轮报单时间’参数确定
         count = len(stock_list)
-        each_time = int(turn_total_time / cout)
+        each_time = int(turn_total_time / count)
         r = random.randint(0, 2 * each_time)
         time.sleep(r)
 
