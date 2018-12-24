@@ -1,2 +1,2 @@
-python run_MM.py btcusdt
+python D:\Robin\UniDAX_MM\Monitor\run_MM.py btcusdt
 pause

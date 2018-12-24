@@ -1,7 +1,5 @@
 # based on @github  : https://github.com/KlausQIU
 
-from Huobi.HuobiUtils import *
-
 '''
 Market data API
 '''

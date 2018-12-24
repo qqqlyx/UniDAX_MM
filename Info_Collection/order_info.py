@@ -5,8 +5,7 @@
 统计订单相关信息
 """
 
-from UniDax import UniDaxServices as uds, Constant as cons
-import json
+from Api.UniDax import UniDaxServices as uds
 
 
 def do_analyze():

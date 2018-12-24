@@ -7,11 +7,12 @@
 import sys
 sys.path.append('D:\\Robin\\UniDAX_MM')
 
-from Huobi import HuobiServices as hbs
-from UniDax import UniDaxServices as uds, Constant as cons
+from Api.Huobi import HuobiServices as hbs
+from Api.UniDax import Constant as cons
+from Api.UniDax import UniDaxServices as uds
 import json
 import random
-import pprint
+
 
 # 获取火币行情
 def get_huobi_depth(s_l):

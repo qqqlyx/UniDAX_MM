@@ -4,7 +4,7 @@ UniDAX OpenAPI
 import hashlib
 import requests
 import urllib3
-from MM import Tokens
+from Core import Tokens
 
 # 正式账户的api信息
 # APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'

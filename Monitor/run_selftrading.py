@@ -4,7 +4,6 @@
 @github: qqqlyx
 """
 
-from MM import MM_Utils as mma
 import threading
 import logging
 import datetime
@@ -13,13 +12,12 @@ import sys
 import subprocess
 
 # 参与报价币种
-code = 'btcusdt'
-path = 'D:\\Robin\\UniDAX_MM\\MM\\MM_Core.py'
+path = 'D:\\Robin\\UniDAX_MM\\Core\\ST_Core.py'
+# path = 'D:\\GitHub\\UniDAX_MM\\Core\\ST_Core.py'
 
 
-class mm_action():
-    def __init__(self, code, cmd):
-        self.code = code
+class st_action():
+    def __init__(self, cmd):
         self.cmd = cmd
         self.p = None
         self.begin_time = datetime.datetime.now()
@@ -30,22 +28,23 @@ class mm_action():
 
         try:
             while True:
-                time.sleep(60)
+                time.sleep(300)
                 self.poll = self.p.poll() #判断程序进程是否存在，None：表示程序正在运行 其他值：表示程序已退出
 
                 now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+
                 if self.poll is None:
-                    print(now_time + '  ' + code + ": NORMAL")
+                    print(now_time + "  Self-Trading : NORMAL")
                 else:
-                    print(now_time + '  ' + code + ": STOP,TRY RE-OPEN")
+                    print(now_time + "  Self-Trading : STOP,TRY RE-OPEN")
                     self.run()
         except Exception as e:
-            print('---->except<mm_action>', e)
+            print('---->except<st_action>', e)
 
     def run(self):
         print('start OK!')
-        self.p = subprocess.Popen(['python', '%s' % self.cmd, '%s' % self.code],
+        self.p = subprocess.Popen(['python', '%s' % self.cmd],
                                   stdin=sys.stdin, stdout=sys.stdout, stderr=sys.stderr, shell=False)
 
 
-app = mm_action(code, path)
+app = st_action(path)

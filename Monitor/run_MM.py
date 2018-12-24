@@ -12,7 +12,7 @@ import subprocess
 
 # 参与报价币种
 code = sys.argv[1]
-path = 'D:\\Robin\\UniDAX_MM\\MM\\MM_Core.py'
+path = 'D:\\Robin\\UniDAX_MM\\Core\\MM_Core.py'
 
 
 class mm_action():

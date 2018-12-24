@@ -2,9 +2,10 @@ import sys
 sys.path.append('D:\\Robin\\UniDAX_MM')
 
 import time
-from MM import MM_Utils as mmu
-from UniDax import UniDaxServices as uds, Constant as cons
-from Huobi import HuobiServices as hbs
+from Core import MM_Utils as mmu
+from Api.UniDax import Constant as cons
+from Api.UniDax import UniDaxServices as uds
+from Api.Huobi import HuobiServices as hbs
 import random
 
 stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',

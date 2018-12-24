@@ -4,8 +4,7 @@
 """
 
 # 删除所有已挂单
-from UniDax import UniDaxServices as uds
-from pprint import pprint
+from Api.UniDax import UniDaxServices as uds
 import json
 
 codes = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']

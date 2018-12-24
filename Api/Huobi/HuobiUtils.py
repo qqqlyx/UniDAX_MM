@@ -10,7 +10,7 @@ import urllib
 import urllib.parse
 import urllib.request
 import requests
-from MM import Tokens
+from Core import Tokens
 
 # 此处填写APIKEY
 
