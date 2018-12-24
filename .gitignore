@@ -8,3 +8,5 @@
 *.pyc
 UniDax/__pycache__/UniDaxServices.cpython-36.pyc
 *.pyc
+*.pyc
+*.xml
