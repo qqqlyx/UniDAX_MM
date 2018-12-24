@@ -7,6 +7,9 @@ import random
 
 stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
 
+# 完成一轮报单的时间 秒
+turn_total_time = 55
+
 while True:
     for code in stock_list:
         # 使用火币报价
@@ -24,10 +27,10 @@ while True:
         quota_uni = uds.market_dept(code, 'step0')
 
         # 如果没有盘口 就不做报单
-        if len(quota_uni['data']['tick']['asks']) < 4:
+        if len(quota_uni['data']['tick']['asks']) < 6:
             break
 
-        if len(quota_uni['data']['tick']['bids']) < 4:
+        if len(quota_uni['data']['tick']['bids']) < 6:
             break
 
         vol1 = quota_uni['data']['tick']['asks'][0][1]
@@ -48,8 +51,12 @@ while True:
         # 报卖单
         mmu.do_trading(code, p, v, 'SELL')
 
-    # 等55秒后再重复
-    time.sleep(55)
+        # 报单后等随机时间，以使得各合约成交时间不同
+        # 等待时间根据‘一轮报单时间’参数确定
+        count = len(stock_list)
+        each_time = int(turn_total_time / cout)
+        r = random.randint(0, 2 * each_time)
+        time.sleep(r)
 
     continue
 
