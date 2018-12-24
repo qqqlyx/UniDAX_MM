@@ -4,7 +4,6 @@
 @github: qqqlyx
 """
 
-from MM import MM_Utils as mma
 import threading
 import logging
 import datetime

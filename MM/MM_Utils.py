@@ -4,6 +4,8 @@
 
 用来维护做市报价
 """
+import sys
+sys.path.append('D:\\Robin\\UniDAX_MM')
 
 from Huobi import HuobiServices as hbs
 from UniDax import UniDaxServices as uds, Constant as cons

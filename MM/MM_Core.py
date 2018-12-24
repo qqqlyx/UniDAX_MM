@@ -1,7 +1,9 @@
+
+import sys
+sys.path.append('D:\\Robin\\UniDAX_MM')
+
 import time
 from MM import MM_Utils as mmu
-import sys
-
 code =sys.argv[1]
 stock_list = [code]
 

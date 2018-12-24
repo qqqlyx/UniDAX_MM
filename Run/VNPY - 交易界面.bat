@@ -1,0 +1,2 @@
+python run_selftrading.py
+pause
