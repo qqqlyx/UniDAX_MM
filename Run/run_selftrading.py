@@ -14,6 +14,7 @@ import subprocess
 
 # 参与报价币种
 path = 'D:\\Robin\\UniDAX_MM\\MM\\ST_Core.py'
+# path = 'D:\\GitHub\\UniDAX_MM\\MM\\ST_Core.py'
 
 
 class st_action():

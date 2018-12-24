@@ -8,9 +8,14 @@ import random
 stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
 
 # 完成一轮报单的时间 秒
-turn_total_time = 55
+turn_total_time = 180
 
+# 为了增加真实性，此处报单顺序会随机打乱
 while True:
+    # 把stock顺序打乱
+    random.shuffle(stock_list)
+
+    # 再进行报单
     for code in stock_list:
         # 使用火币报价
         quota_hb = hbs.get_depth(code, 'step0')
