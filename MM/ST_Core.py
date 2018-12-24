@@ -7,10 +7,12 @@ from UniDax import UniDaxServices as uds, Constant as cons
 from Huobi import HuobiServices as hbs
 import random
 
-stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
+stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
+              'yoousdt','zrxusdt','omgusdt','mcousdt','manausdt','sntusdt',
+              'wtcusdt','gntusdt','repusdt','cmtusdt','aeusdt','elfusdt','pptusdt']
 
 # 完成一轮报单的时间 秒
-turn_total_time = 50
+turn_total_time = 120
 
 # 为了增加真实性，此处报单顺序会随机打乱
 while True:
