@@ -15,7 +15,7 @@ stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
 #               'wtcusdt','gntusdt','cmtusdt','aeusdt','elfusdt']
 
 # 完成一轮报单的时间 秒
-turn_total_time = 60
+turn_total_time = 40
 
 # 为了增加真实性，此处报单顺序会随机打乱
 while True:
