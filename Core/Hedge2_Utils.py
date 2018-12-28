@@ -14,6 +14,34 @@ import time
 根据成交记录，进行对冲
 '''
 
+
+# UniDAX查询最新成交单比较麻烦
+def get_lastTrade(code):
+    # 先查询出总成交单数量
+    trade = uds.all_trade(symbol=code, pageSize=1, page=1)
+    if trade['msg'] != 'suc':
+        print('获取成交记录 出错')
+        return
+    t_count = int(trade['data']['count'])
+
+    # 再计算要查询的页面
+    paS = 500
+    pa = int(t_count / paS)
+
+    trade = uds.all_trade(symbol=code, pageSize=paS, page=pa)
+    if trade['msg'] != 'suc':
+        print('获取成交记录 出错')
+        return
+    list1 = trade['data']['resultList']
+
+    trade = uds.all_trade(symbol=code, pageSize=paS, page=(pa + 1))
+    if trade['msg'] != 'suc':
+        print('获取成交记录 出错')
+        return
+    list2 = trade['data']['resultList']
+    return list1 + list2
+
+
 # 采用盯住成交单的方式，进行对冲
 def get_outerTrade(user_id, c_l, hedged_id):
     '''
@@ -26,14 +54,11 @@ def get_outerTrade(user_id, c_l, hedged_id):
     result_hedgelist = [] # 返回结果
 
     for code in c_l:
-        trade = uds.all_trade(symbol = code, pageSize=1000, page=0)
+        # 查询
+        quotaList = get_lastTrade(code)
 
-        if trade['msg'] != 'suc':
-            print('获取成交记录 出错')
-            return
-
-
-        for tr in trade['data']['resultList']:
+        #
+        for tr in quotaList:
             ask_uId = tr['ask_user_id']
             bid_uId = tr['bid_user_id']
             id = tr['id']
