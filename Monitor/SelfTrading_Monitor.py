@@ -28,6 +28,7 @@ class st_action():
         self.p = None
         self.begin_time = datetime.datetime.now()
         self.count = 0
+        self.param = param
 
         # 运行
         self.run()
