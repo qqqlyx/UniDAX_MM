@@ -83,7 +83,7 @@ def get_outerTrade(user_id, c_l, done_t):
                          'id': id,
                          'ask_uId': ask_uId,
                          'bid_uId': bid_uId,
-                         'trade_time':ctime.strftime('%Y-%m-%d %H:%M:%S')}
+                         'ctime':ctime}
                     result_hedgelist.append(d)
 
     return result_hedgelist

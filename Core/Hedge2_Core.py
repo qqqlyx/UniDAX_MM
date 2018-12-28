@@ -40,7 +40,9 @@ while True:
         id = info['id']
 
         hed2.do_trade_huobi(code, vol, direc)
-        print('执行对冲， ' + code + '   Vol=' + vol + ' Dir=' + direc)
+
+        loc_t = time.localtime(info['ctime'])
+        print('执行对冲， ' + code + '   Vol=' + vol + ' Dir=' + direc + '   外部成交时间=' + loc_t)
 
     # print('finish' + str(datetime.datetime.now()))
     # 等10秒后再重复
