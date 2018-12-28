@@ -87,11 +87,16 @@ def get_outerTrade(user_id, c_l, hedged_id):
 
 
 # 在火币下单, 因为对冲，所以直接下市价单
+# 使用限价单
 def do_trade_huobi(code, he_v, he_d):
+    h_quota = hbs.get_depth(code,'step0')
+
     if he_d == 'BUY':
-        t = 'buy-market'
+        p = h_quota['tick']['asks'][0][0]
+        t = 'buy-limit'
     elif he_d == 'SELL':
-        t = 'sell-market'
+        p = h_quota['tick']['bids'][0][0]
+        t = 'sell-limit'
 
     try:
     # 下单交易
@@ -99,7 +104,8 @@ def do_trade_huobi(code, he_v, he_d):
             amount=float(he_v),
             source='api',
             symbol=code,
-            _type=t)
+            _type=t,
+            price=p)
         print(t)
     except Exception as e:
         print('---->except<do_trade_huobi><下单交易>: ' + e)
