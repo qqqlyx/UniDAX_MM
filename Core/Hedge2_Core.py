@@ -38,8 +38,7 @@ while True:
         direc = info['direction']
         id = info['id']
 
-
-        hed2.do_trade_huobi(code,vol,direc)
+        hed2.do_trade_huobi(code, vol, direc)
         print('执行对冲， ' + code + '   Vol=' + vol + ' Dir=' + direc)
 
         # 记录id

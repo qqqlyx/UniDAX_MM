@@ -95,12 +95,12 @@ def do_trade_huobi(code, he_v, he_d):
 
     try:
     # 下单交易
-        hbs.send_order(
+        t = hbs.send_order(
             amount=float(he_v),
             source='api',
             symbol=code,
             _type=t)
-
+        print(t)
     except Exception as e:
         print('---->except<do_trade_huobi><下单交易>: ' + e)
     return
