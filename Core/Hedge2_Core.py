@@ -4,6 +4,7 @@ sys.path.append('D:\\Robin\\UniDAX_MM')
 import time
 from Core import Hedge2_Utils as hed2
 from pprint import *
+import datetime
 
 '''
 参数
@@ -24,6 +25,7 @@ for code in CODE_LIST:
 
 
 while True:
+    print('begin' + datetime.datetime.now)
 
     # 获取未对冲订单信息
     hedge_info = hed2.get_outerTrade(USER_ID, CODE_LIST, hedged_id)
@@ -42,5 +44,6 @@ while True:
         id = hedge_info['id']
         hedged_id[code].append(id)
 
+    print('finish' + datetime.datetime.now)
     # 等10秒后再重复
-    time.sleep(50)
+    time.sleep(3)

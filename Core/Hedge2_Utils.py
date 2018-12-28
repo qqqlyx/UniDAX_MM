@@ -24,7 +24,7 @@ def get_lastTrade(code):
     t_count = int(trade['data']['count'])
 
     # 再计算要查询的页面
-    paS = 500
+    paS = 50
     pa = int(t_count / paS)
 
     trade = uds.all_trade(symbol=code, pageSize=paS, page=pa)
