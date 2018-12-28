@@ -90,7 +90,7 @@ def get_outerTrade(user_id, c_l, hedged_id):
 def do_trade_huobi(code, he_v, he_d):
     if he_d == 'BUY':
         t = 'buy-market'
-    else:
+    elif he_d == 'SELL':
         t = 'sell-market'
 
     try:

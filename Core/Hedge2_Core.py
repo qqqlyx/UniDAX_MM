@@ -14,7 +14,7 @@ import datetime
 CODE_LIST = ['btcusdt']
 
 # userID，需要与使用的账号严格
-USER_ID = ''
+USER_ID = '10090'
 
 '''
 变量
@@ -40,7 +40,7 @@ while True:
 
 
         hed2.do_trade_huobi(code,vol,direc)
-        print('执行对冲， ' + code + '   Vol=' + vol + 'Dir=' + direc)
+        print('执行对冲， ' + code + '   Vol=' + vol + ' Dir=' + direc)
 
         # 记录id
         hedged_id[code].append(id)
