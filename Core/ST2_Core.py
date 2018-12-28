@@ -25,6 +25,8 @@ _path = Tokens._path + '\\ST_setting'
 # 参数：正在运行的日期
 _runDay = ''
 
+print('begin:' + _coin)
+
 # 循环运行
 while True:
 
@@ -34,7 +36,6 @@ while True:
     now = datetime.datetime.now()
     date = str(now.year) + str(now.month) + str(now.day)
     if _runDay != date:
-
         _runDay = date  # 赋值，同一天不会2次进入这一部分
         _trading_time = []  # _trading_time中包含所有触发交易的时间戳
         _trading_amount = []  # 保存所有成交金额
