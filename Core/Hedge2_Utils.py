@@ -62,8 +62,10 @@ def get_outerTrade(user_id, c_l, done_t):
             bid_uId = tr['bid_user_id']
             id = tr['id']
             ctime = tr['ctime']
+            
 
             if ctime > done_t: # 如果订单时间，在done_t时间戳之后，才考虑检查
+                print(str(ctime))
                 if ask_uId != bid_uId: # 出现外部成交
                     # 所需参数
                     hedge_code = code
