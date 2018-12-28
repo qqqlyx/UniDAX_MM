@@ -22,7 +22,7 @@ _path = 'D:\\Robin\\UniDAX_MM'
 # UniDAX_SECRET = 'b2a9019765c0a64cc54214581c7366cd'
 # UniDAX_unidax_url = "https://testwww.unidax.com/exchange-open-api"
 
-# 机器人
+# 正式-机器人
 UniDAX_APIKEY = '8595327a8947cf06492285588d761e01'
 UniDAX_SECRET = 'b2a9019765c0a64cc54214581c7366cd'
 UniDAX_unidax_url = "https://api.unidax.com/exchange-open-api"

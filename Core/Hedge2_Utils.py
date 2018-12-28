@@ -42,11 +42,11 @@ def get_lastTrade(code):
 
 
 # 采用盯住成交单的方式，进行对冲
-def get_outerTrade(user_id, c_l, hedged_id):
+def get_outerTrade(user_id, c_l, done_t):
     '''
     :param user_id: 机器人user_id 用来方便成交记录
     :param c_l: 合约列表
-    :param hedged_id: 已完成对冲的id号
+    :param done_t: 此时间之前的订单，已经对冲完成
     :return:
     '''
 
@@ -61,27 +61,30 @@ def get_outerTrade(user_id, c_l, hedged_id):
             ask_uId = tr['ask_user_id']
             bid_uId = tr['bid_user_id']
             id = tr['id']
+            ctime = tr['ctime']
 
-            if ask_uId != bid_uId and id not in hedged_id[code]: # 出现没有对冲过的外部成交
-                # 所需参数
-                hedge_code = code
-                hedge_vol = tr['volume']
-                hedge_dirc = ''
+            if ctime > done_t: # 如果订单时间，在done_t时间戳之后，才考虑检查
+                if ask_uId != bid_uId: # 出现外部成交
+                    # 所需参数
+                    hedge_code = code
+                    hedge_vol = tr['volume']
+                    hedge_dirc = ''
 
-                # 判断
-                if str(ask_uId) == str(user_id):  # 说明该笔成交中，处于卖方，需要做买对冲
-                    hedge_dirc = 'BUY'
-                elif str(bid_uId) == str(user_id):
-                    hedge_dirc = 'SELL'
+                    # 判断
+                    if str(ask_uId) == str(user_id):  # 说明该笔成交中，处于卖方，需要做买对冲
+                        hedge_dirc = 'BUY'
+                    elif str(bid_uId) == str(user_id):
+                        hedge_dirc = 'SELL'
 
-                # 返回数据
-                d = {'code': hedge_code,
-                     'vol': hedge_vol,
-                     'direction': hedge_dirc,
-                     'id': id,
-                     'ask_uId': ask_uId,
-                     'bid_uId': bid_uId}
-                result_hedgelist.append(d)
+                    # 返回数据
+                    d = {'code': hedge_code,
+                         'vol': hedge_vol,
+                         'direction': hedge_dirc,
+                         'id': id,
+                         'ask_uId': ask_uId,
+                         'bid_uId': bid_uId,
+                         'trade_time':ctime.strftime('%Y-%m-%d %H:%M:%S')}
+                    result_hedgelist.append(d)
 
     return result_hedgelist
 
