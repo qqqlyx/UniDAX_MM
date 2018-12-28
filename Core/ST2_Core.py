@@ -16,8 +16,8 @@ from Core import Tokens
 # 成交时间、金额由setting文件确认好
 
 # 系统参数
-#_coin =sys.argv[1]
-_coin = 'btcusdt'
+_coin =sys.argv[1]
+#_coin = 'btcusdt'
 
 # 配置文件地址
 _path = Tokens._path + '\\ST_setting'
