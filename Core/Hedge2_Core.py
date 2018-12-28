@@ -10,7 +10,8 @@ import datetime
 参数
 '''
 # 对冲合约
-CODE_LIST = ['ethusdt', 'etcusdt', 'btcusdt', 'ltcusdt', 'ethbtc', 'ltcbtc']
+# CODE_LIST = ['ethusdt', 'etcusdt', 'btcusdt', 'ltcusdt', 'ethbtc', 'ltcbtc']
+CODE_LIST = ['btcusdt']
 
 # userID，需要与使用的账号严格
 USER_ID = ''
