@@ -1,2 +1,2 @@
-python D:\Robin\UniDAX_MM\Monitor\run_selftrading.py
+python D:\Robin\UniDAX_MM\Monitor\SelfTrading_Monitor.py all
 pause

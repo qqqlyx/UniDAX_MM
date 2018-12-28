@@ -7,7 +7,7 @@ for code in stock_list:
     path = 'run_' + code + '.bat'
     f = open(path,'w')
 
-    f.write('python D:\\Robin\\UniDAX_MM\\Monitor\\run_MM.py ' + code)
+    f.write('python D:\\Robin\\UniDAX_MM\\Monitor\\MM_Monitor.py ' + code)
     f.write('\npause')
     f.close
 

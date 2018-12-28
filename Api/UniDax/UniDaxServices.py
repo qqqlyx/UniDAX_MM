@@ -6,24 +6,6 @@ import requests
 import urllib3
 from Core import Tokens
 
-# 正式账户的api信息
-# APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'
-# SECRET = '09bb015463410a1844066df46a223db3'
-# unidax_url = "https://api.unidax.com/exchange-open-api"
-
-
-# test
-# APIKEY = '180706c4c319c665fdf05d35c9ec5950'
-# SECRET = '6f106b0a2f3f01de5beb049dfb4e07e2'
-# unidax_url = "https://testwww.unidax.com/exchange-open-api"
-
-# test 机器人
-# APIKEY = '8595327a8947cf06492285588d761e01'
-# SECRET = 'b2a9019765c0a64cc54214581c7366cd'
-# unidax_url = "https://testwww.unidax.com/exchange-open-api"
-
-# 机器人
-
 
 APIKEY = Tokens.UniDAX_APIKEY
 SECRET = Tokens.UniDAX_SECRET
@@ -57,10 +39,10 @@ def getTime():
     return n_t
 
 
+
 '''
 行情api
 '''
-
 
 # 获取当前行情
 def get_ticker(symbol):
@@ -236,7 +218,7 @@ def all_trade(symbol, pageSize='10000', page='1'):
     secret = SECRET
     time = getTime()
 
-    dic = {'api_key': api_key, 'time': time, 'symbol': symbol, 'pageSize': pageSize, 'page': page}
+    dic = {'api_key': api_key, 'time': time, 'symbol': symbol, 'pageSize': str(pageSize), 'page': str(page)}
     sort = sorted(dic.items(), key=lambda item: item[0])
     string = ''
     for tem in sort:
@@ -246,4 +228,5 @@ def all_trade(symbol, pageSize='10000', page='1'):
     sign = getMD5(string + secret)
     url += 'sign=' + sign
     return getUrlContent(url)
+
 
