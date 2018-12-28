@@ -26,7 +26,7 @@ print('*' + str(done_time))
 time.sleep(1)
 
 while True:
-    print('begin' + str(datetime.datetime.now()))
+    #print('begin' + str(datetime.datetime.now()))
 
     # 获取未对冲订单信息
     hedge_info = hed2.get_outerTrade(USER_ID, CODE_LIST, done_time)
