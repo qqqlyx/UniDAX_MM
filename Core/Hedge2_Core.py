@@ -36,13 +36,12 @@ while True:
         code = info['code']
         vol = info['vol']
         direc = info['direction']
+        id = info['id']
 
         hed2.do_trade_huobi(code,vol,direc)
         print('执行对冲， ' + code + '   Vol=' + vol + 'Dir=' + direc)
 
         # 记录id
-        code = hedge_info['code']
-        id = hedge_info['id']
         hedged_id[code].append(id)
 
     # print('finish' + str(datetime.datetime.now()))
