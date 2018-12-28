@@ -14,7 +14,6 @@ import time
 根据成交记录，进行对冲
 '''
 
-
 # UniDAX查询最新成交单比较麻烦
 def get_lastTrade(code):
     # 先查询出总成交单数量
@@ -70,13 +69,18 @@ def get_outerTrade(user_id, c_l, hedged_id):
                 hedge_dirc = ''
 
                 # 判断
-                if ask_uId == user_id:  # 说明该笔成交中，处于卖方，需要做买对冲
+                if str(ask_uId) == str(user_id):  # 说明该笔成交中，处于卖方，需要做买对冲
                     hedge_dirc = 'BUY'
-                elif bid_uId == user_id:
+                elif str(bid_uId) == str(user_id):
                     hedge_dirc = 'SELL'
 
                 # 返回数据
-                d = {'code': hedge_code, 'vol': hedge_vol, 'direction': hedge_dirc, 'id': id}
+                d = {'code': hedge_code,
+                     'vol': hedge_vol,
+                     'direction': hedge_dirc,
+                     'id': id,
+                     'ask_uId': ask_uId,
+                     'bid_uId': bid_uId}
                 result_hedgelist.append(d)
 
     return result_hedgelist
