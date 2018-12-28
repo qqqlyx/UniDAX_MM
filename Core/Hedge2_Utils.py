@@ -80,3 +80,22 @@ def get_outerTrade(user_id, c_l, hedged_id):
                 result_hedgelist.append(d)
 
     return result_hedgelist
+
+# 在火币下单, 因为对冲，所以直接下市价单
+def do_trade_huobi(code, he_v, he_d):
+    if he_d == 'BUY':
+        t = 'buy-market'
+    else:
+        t = 'sell-market'
+
+    try:
+    # 下单交易
+        hbs.send_order(
+            amount=he_v,
+            source='api',
+            symbol=code,
+            _type=t)
+
+    except Exception as e:
+        print('---->except<do_trade_huobi><下单交易>: ' + e)
+    return

@@ -11,17 +11,6 @@ from pprint import *
 # 对冲合约
 CODE_LIST = ['ethusdt', 'etcusdt', 'btcusdt', 'ltcusdt', 'ethbtc', 'ltcbtc']
 
-# 基准仓位
-UNI_BASE = {'eth': 10000000,
-            'etc': 9000000,
-            'btc': 10000000,
-            'ltc': 10000000}
-
-HUOBI_BASE = {'eth': 0,
-              'etc': 0,
-              'btc': 0,
-              'ltc': 0}
-
 # userID，需要与使用的账号严格
 USER_ID = ''
 
@@ -40,13 +29,19 @@ while True:
     hedge_info = hed2.get_outerTrade(USER_ID, CODE_LIST, hedged_id)
 
     # 进行对冲
-    pprint(hedge_info)
-
-    # 记录id
     for info in hedge_info:
+        code = info['code']
+        vol = info['vol']
+        dir = info['direction']
+        hed2.do_trade_huobi(code,vol,dir)
+
+        # 记录id
         code = hedge_info['code']
         id = hedge_info['id']
         hedged_id[code].append(id)
 
-    # 等10秒后再重复
-    time.sleep(10)
+        # print
+        pprint('已进行对冲：' + code + '  Vol=' + vol + ' DIR=' + dir)
+
+    # 等50秒后再重复
+    time.sleep(50)
