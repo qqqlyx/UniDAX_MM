@@ -25,7 +25,7 @@ for code in CODE_LIST:
 
 
 while True:
-    print('begin' + str(datetime.datetime.now))
+    print('begin' + str(datetime.datetime.now()))
 
     # 获取未对冲订单信息
     hedge_info = hed2.get_outerTrade(USER_ID, CODE_LIST, hedged_id)
@@ -44,6 +44,6 @@ while True:
         id = hedge_info['id']
         hedged_id[code].append(id)
 
-    print('finish' + str(datetime.datetime.now))
+    print('finish' + str(datetime.datetime.now()))
     # 等10秒后再重复
     time.sleep(3)
