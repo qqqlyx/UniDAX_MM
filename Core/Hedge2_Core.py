@@ -22,6 +22,8 @@ USER_ID = '10090'
 '''
 # 记录已检查完成的时间戳，只检查其后的订单
 done_time = int(round(time.time() * 1000)) # 毫秒级时间戳
+print('*' + str(done_time))
+time.sleep(1)
 
 while True:
     #print('begin' + str(datetime.datetime.now()))
