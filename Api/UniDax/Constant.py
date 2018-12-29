@@ -4,7 +4,8 @@
 """
 
 # 记录各类常数
-
+# 'zrxusdt','omgusdt','mcoeth','manaeth','sntusdt',
+#               'wtceth','gntusdt','cmtusdt','aeeth']
 
 # 获取交易精度 type：price、volume
 def get_precision(code, type):
@@ -24,6 +25,25 @@ def get_precision(code, type):
         if code == 'bchusdt':
             return 2
 
+        if code == 'zrxusdt':
+            return 4
+        if code == 'omgusdt':
+            return 4
+        if code == 'mcoeth':
+            return 6
+        if code == 'manaeth':
+            return 8
+        if code == 'sntusdt':
+            return 6
+        if code == 'wtceth':
+            return 6
+        if code == 'gntusdt':
+            return 4
+        if code == 'cmtusdt':
+            return 4
+        if code == 'aeeth':
+            return 6
+
     if type == 'volume':
         if code == 'etcusdt':
             return 2
@@ -39,3 +59,22 @@ def get_precision(code, type):
             return 3
         if code == 'bchusdt':
             return 2
+
+        if code == 'zrxusdt':
+            return 2
+        if code == 'omgusdt':
+            return 4
+        if code == 'mcoeth':
+            return 4
+        if code == 'manaeth':
+            return 1
+        if code == 'sntusdt':
+            return 4
+        if code == 'wtceth':
+            return 4
+        if code == 'gntusdt':
+            return 4
+        if code == 'cmtusdt':
+            return 4
+        if code == 'aeeth':
+            return 4

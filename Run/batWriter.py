@@ -1,8 +1,8 @@
 from Core import Tokens
 
 stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              'yoousdt','zrxusdt','omgusdt','mcousdt','manausdt','sntusdt',
-              'wtcusdt','gntusdt','repusdt','cmtusdt','aeusdt','elfusdt','pptusdt']
+              'zrxusdt','omgusdt','mcoeth','manaeth','sntusdt',
+              'wtceth','gntusdt','cmtusdt','aeeth']
 
 
 for code in stock_list:
