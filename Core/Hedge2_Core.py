@@ -12,7 +12,7 @@ from Core import Tokens
 '''
 # 对冲合约
 # CODE_LIST = ['ethusdt', 'etcusdt', 'btcusdt', 'ltcusdt', 'ethbtc', 'ltcbtc']
-CODE_LIST = ['btcusdt']
+CODE_LIST = ['btcusdt','ethusdt']
 
 # userID，需要与使用的账号严格
 USER_ID = '10090'

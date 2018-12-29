@@ -117,7 +117,8 @@ def do_trade_huobi(code, he_v, he_d):
             symbol=code,
             _type=t,
             price=p)
-        #print(t)
+        if t['status'] != 'ok':
+            print(t)
     except Exception as e:
         print('---->except<do_trade_huobi><下单交易>: ' + e)
     return
