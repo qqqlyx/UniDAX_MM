@@ -12,6 +12,7 @@ from Api.UniDax import Constant as cons
 from Api.UniDax import UniDaxServices as uds
 import json
 import random
+import time
 
 
 # 获取火币行情
@@ -204,6 +205,7 @@ def do_trading(code, price, vol, direction):
     # test
     #vol = '0.01'
     try:
+        time.sleep(0.1)
         r = uds.create_order(code, direction, price, vol)
         re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
     except Exception as e:
