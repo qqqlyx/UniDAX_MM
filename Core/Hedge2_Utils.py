@@ -94,7 +94,7 @@ def get_outerTrade(user_id, c_l, done_t):
             if ctime > result_lastCtim[code]:
                 result_lastCtim[code] = ctime
 
-    return result_hedgelist, result_lastCtim[code]
+    return result_hedgelist, result_lastCtim
 
 
 # 在火币下单, 因为对冲，所以直接下市价单
@@ -117,7 +117,7 @@ def do_trade_huobi(code, he_v, he_d):
             symbol=code,
             _type=t,
             price=p)
-        print(t)
+        #print(t)
     except Exception as e:
         print('---->except<do_trade_huobi><下单交易>: ' + e)
     return

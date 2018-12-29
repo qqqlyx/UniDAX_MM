@@ -35,7 +35,7 @@ class st_action():
 
         try:
             while True:
-                time.sleep(300)
+                time.sleep(600)
                 self.poll = self.p.poll()  # 判断程序进程是否存在，None：表示程序正在运行 其他值：表示程序已退出
 
                 now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')

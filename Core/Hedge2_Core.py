@@ -26,6 +26,8 @@ done_time = {}
 for coin in CODE_LIST:
     done_time[coin] = int(round(time.time() * 1000)) # 毫秒级时间戳
 
+print('UniDAX量化对冲系统已启动。')
+
 while True:
     #print('begin' + str(datetime.datetime.now()))
 
@@ -48,8 +50,10 @@ while True:
 
         #loc_t = time.localtime(info['ctime'])
         #print('执行对冲， ' + code + '   Vol=' + vol + ' Dir=' + direc + '   外部成交时间=' + loc_t)
-        print('执行对冲， ' + code + '   Vol=' + vol + ' Dir=' + direc)
-
+        n_T = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
+        t_T = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(int(info['ctime'] / 1000)))
+        print('* 有交易，开始执行对冲：' + code + '   Vol=' + vol + '   Dir=' + direc)
+        print('  交易开始时间：' + t_T + '     对冲完成时间：' + n_T)
 
     # print('finish' + str(datetime.datetime.now()))
     # 等10秒后再重复
