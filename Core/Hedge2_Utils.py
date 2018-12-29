@@ -51,10 +51,12 @@ def get_outerTrade(user_id, c_l, done_t):
     '''
 
     result_hedgelist = [] # 返回结果
+    result_lastCtim = {}  # 返回查询的成交单中最新时间
 
     for code in c_l:
         # 查询
         quotaList = get_lastTrade(code)
+        result_lastCtim[code] = 0
 
         #
         for tr in quotaList:
@@ -62,10 +64,11 @@ def get_outerTrade(user_id, c_l, done_t):
             bid_uId = tr['bid_user_id']
             id = tr['id']
             ctime = tr['ctime']
-            
 
-            if ctime > done_t: # 如果订单时间，在done_t时间戳之后，才考虑检查
-                print(str(ctime))
+
+            if ctime > done_t[code]: # 如果订单时间，在done_t时间戳之后，才考虑检查
+                #print(str(ctime))
+
                 if ask_uId != bid_uId: # 出现外部成交
                     # 所需参数
                     hedge_code = code
@@ -88,7 +91,10 @@ def get_outerTrade(user_id, c_l, done_t):
                          'ctime':ctime}
                     result_hedgelist.append(d)
 
-    return result_hedgelist
+            if ctime > result_lastCtim[code]:
+                result_lastCtim[code] = ctime
+
+    return result_hedgelist, result_lastCtim[code]
 
 
 # 在火币下单, 因为对冲，所以直接下市价单
