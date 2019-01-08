@@ -4,22 +4,29 @@
 @github: qqqlyx
 """
 
+
 import threading
 import logging
 import datetime
 import time
 import sys
 import subprocess
+from Core import Tokens
 
-param = sys.argv[1]
-if param == 'all':
+#param = sys.argv[1]
+param = 'ST2'
+
+#sys.path.append('D:\\Robin\\UniDAX_MM')
+sys.path.append('D:\\Github\\UniDAX_MM')
+
+if param == 'ST1':
     # 第一种
     # 根据火币成交量比例自成交
-    path = 'D:\\Robin\\UniDAX_MM\\Core\\ST1_Core.py'
+    path = Tokens._path + '\\Core\\ST1_Core.py'
 else:
     # 第二种
     # 自设定数据成交
-    path = 'D:\\Robin\\UniDAX_MM\\Core\\ST2_Core.py'
+    path = Tokens._path + '\\Core\\ST2_All.py'
 
 
 class st_action():
@@ -35,7 +42,7 @@ class st_action():
 
         try:
             while True:
-                time.sleep(300)
+                time.sleep(120)
                 self.poll = self.p.poll()  # 判断程序进程是否存在，None：表示程序正在运行 其他值：表示程序已退出
 
                 now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')

@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 @author: robin.liu
 """
+import sys
+sys.path.append('D:\\Robin\\UniDAX_MM')
 
 from Api.Huobi import HuobiServices as hbs
 from Api.UniDax import UniDaxServices as uds, Constant as cons

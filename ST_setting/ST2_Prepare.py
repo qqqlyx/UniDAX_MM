@@ -27,20 +27,28 @@ from Core import Tokens
 # pd.set_option('display.width',1000)
 
 '''
+设置参数
+'''
+p_trade_time = [25, 45] # 交易间隔范围
+
+
+'''
 读取参数文件,遍历对应文件夹
 '''
 # os.path.abspath(path)
-father_path = Tokens._path
-readPath = father_path + '\\ST_setting\\UniDAX_MarketMaker.xlsx'
+
+readPath = 'D:\\GitHub\\UniDAX_MM\\ST_setting\\UniDAX_MarketMaker.xlsx'
+#father_path = Tokens._path
+#readPath = father_path + '\\ST_setting\\UniDAX_MarketMaker.xlsx'
 datas = pd.read_excel(readPath)
 
 # 日期
-nextDAY = datetime.datetime.now() + datetime.timedelta(days=1)
+nextDAY = datetime.datetime.now()# + datetime.timedelta(days=1)
 #print(datas)
 
 # 读取成交金额
-_totalTradeAmount_min = float(datas.iloc[0][1])  # 目标总成交金额范围下限 (万元usdt)
-_totalTradeAmount_max = float(datas.iloc[0][2])  # 上限 (万元usdt)
+_totalTradeAmount_min = float(datas.iloc[0][1]) * 10000  # 目标总成交金额范围下限 (万元usdt)
+_totalTradeAmount_max = float(datas.iloc[0][2]) * 10000  # 上限 (万元usdt)
 
 # 读取活跃交易时间
 _activeTime = []
@@ -140,7 +148,7 @@ def _randomSplitHour():
     total = 0
     while True:
         # 随机每次交易时间
-        r = random.randint(6,10)
+        r = random.randint(p_trade_time[0], p_trade_time[1])
         total += r
 
         if total <= 3600:
@@ -168,6 +176,9 @@ for x in range(_timeTable.shape[1]):
     temp = pd.DataFrame(columns=[coin])
 
     #
+    timelist = []
+    amountlist = []
+
     for y in range(24):
         hour_amount = _timeTable.iloc[y,x] # 每小时总成交金额
 
@@ -183,21 +194,44 @@ for x in range(_timeTable.shape[1]):
         for i in range(len(split_Time)):
             delta = datetime.timedelta(seconds=split_Time[i])
             run_Time += delta
-            temp.loc[run_Time] = split_Amount[i]
+            timelist.append(run_Time)
+            amountlist.append(split_Amount[i])
 
+    temp = pd.DataFrame()
+    temp['Time'] = timelist
+    temp['Amount'] = amountlist
     _tradingPlan[coin] = temp
 
+
+
+# for key in _tradingPlan:
+#     csv_writePath = writePath + '\\' + key + '.csv'
+#     _tradingPlan[key].to_csv(csv_writePath)
+#     continue
+
+
+# 重新处理成1个文件
+_total_tradingPlan = pd.DataFrame()
+for key in _tradingPlan:
+    temp = pd.DataFrame()
+    #temp['Time'] = _tradingPlan[key].iloc[:, 0]
+    temp['Time'] = _tradingPlan[key].loc[:,'Time']
+    temp['Amount'] = _tradingPlan[key].loc[:, 'Amount']
+    temp['Code'] = key
+    _total_tradingPlan = pd.concat([_total_tradingPlan, temp], axis=0)
+    continue
+
 # 写入文件
-writePath = father_path + '\\ST_setting\\' + str(nextDAY.year) + str(nextDAY.month) + str(nextDAY.day)
+writePath = 'D:\\GitHub\\UniDAX_MM\\ST_setting\\' + str(nextDAY.year) + str(nextDAY.month) + str(nextDAY.day)
 if os.path.exists(writePath):
     shutil.rmtree(writePath)
     #time.sleep(3)
 os.makedirs(writePath)
 
-for key in _tradingPlan:
-    csv_writePath = writePath + '\\' + key + '.csv'
-    _tradingPlan[key].to_csv(csv_writePath)
-    continue
+_total_tradingPlan = _total_tradingPlan.sort_values(by='Time')
+csv_writePath = writePath + '\\all.csv'
+_total_tradingPlan.to_csv(csv_writePath)
+
 
 
 
