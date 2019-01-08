@@ -111,7 +111,7 @@ def mm_trading(huobi_q):
 
 # 修改ask下单价格
 def get_ask_price(code, a_p):
-    r = random.uniform(0.008, 0.01)
+    r = random.uniform(0.004, 0.005)
     new = []
     for tem in a_p:
         p = tem*(1+r) # ask订单的price*[1+（0.01-0.015）]随机数，
@@ -131,7 +131,7 @@ def get_ask_vol(code, a_v):
 
 # 修改bid下单价格
 def get_bid_price(code, a_p):
-    r = random.uniform(0.008, 0.01)
+    r = random.uniform(0.004, 0.005)
     new = []
     for tem in a_p:
         p = tem*(1-r) # bid订单的price*[1-（0.01-0.015）随机数]
@@ -202,19 +202,23 @@ def get_more_bid_vol(code, b_v):
 # 实际下单，返回订单id
 def do_trading(code, price, vol, direction):
 
+    result = '000'
     # test
     #vol = '0.01'
     try:
         time.sleep(0.1)
         r = uds.create_order(code, direction, price, vol)
         re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
+
+        # 打印log
+        if re['msg'] != 'suc':
+            print(re)
+            result = '000'
+            
     except Exception as e:
         print('---->except<do_trading>: ' + str(code), e)
 
-    # 打印log
-    if re['msg'] != 'suc':
-        print(re)
-        result = '000'
+
     else:
         #log.info(re)
         result = re['data']['order_id']

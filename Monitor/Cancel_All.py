@@ -7,7 +7,7 @@
 from Api.UniDax import UniDaxServices as uds
 import json
 
-codes = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
+codes = ['aeeth']
 #codes = ['ltcbtc','ltcusdt']
 
 
