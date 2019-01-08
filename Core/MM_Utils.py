@@ -214,14 +214,12 @@ def do_trading(code, price, vol, direction):
         if re['msg'] != 'suc':
             print(re)
             result = '000'
+        else:
+            # log.info(re)
+            result = re['data']['order_id']
             
     except Exception as e:
         print('---->except<do_trading>: ' + str(code), e)
-
-
-    else:
-        #log.info(re)
-        result = re['data']['order_id']
 
     return result
 
