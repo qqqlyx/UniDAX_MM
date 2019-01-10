@@ -1,6 +1,8 @@
 import sys
-sys.path.append('D:\\Robin\\UniDAX_MM')
-#sys.path.append('D:\\Github\\UniDAX_MM')
+import os
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 # 文件地址
 _path = 'D:\\Robin\\UniDAX_MM'

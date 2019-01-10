@@ -1,6 +1,8 @@
 import sys
-sys.path.append('D:\\Robin\\UniDAX_MM')
-#sys.path.append('D:\\Github\\UniDAX_MM')
+import os
+curPath = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(curPath)[0]
+sys.path.append(rootPath)
 
 import time
 import pandas as pd
@@ -76,6 +78,7 @@ while True:
         _code_set.add('btcusdt')
         _code_set.add('ethusdt')
 
+        print("换日完成")
 
     '''
     处理自交易,当现在时间>触发时间戳时，触发对应交易
@@ -91,16 +94,22 @@ while True:
         continue
 
     # 每分钟更新一次行情
-    ts = datetime.datetime.now() - _last_quotaTime
-    if ts.seconds >= 60 or len(HuobiQuota) == 0:
-        _last_quotaTime = datetime.datetime.now()
-        for coin in _code_set:
-            HuobiQuota[coin] = hbs.get_depth(coin, 'step0')
+    # ts = datetime.datetime.now() - _last_quotaTime
+    # if ts.seconds >= 60 or len(HuobiQuota) == 0:
+    #     _last_quotaTime = datetime.datetime.now()
+    #     for coin in _code_set:
+    #         HuobiQuota[coin] = hbs.get_depth(coin, 'step0')
+    #     pprint(HuobiQuota['ltcusdt'])
 
     # 以下是正常触发交易情况
     if now >= _trading_time[0]: # 触发交易
         _code = _trading_code[0]
-        quota = HuobiQuota[code]
+        #quota = HuobiQuota[code]
+        quota = hbs.get_depth(_code, 'step0')
+
+        # if _code == 'ltcusdt':
+        #     pprint(quota)
+
         # if quota['msg'] != 'suc':
         #     print('获取行情失败，重新开始运行')
         #     continue
@@ -110,15 +119,23 @@ while True:
         bid_p = float(quota['tick']['bids'][0][0])
         base_p = (ask_p + bid_p)/2  # 基准价格
 
+
         # 计算一跳的价格
         precis = cons.get_precision(_code, 'price')
         one_step = 1 / (pow(10, precis))  # 一跳
+        # if _code == 'ltcusdt':
+        #     print(one_step)
 
         # 在基准价格上下2跳内，随机取价格
         r = random.randint(-4, 4)
         p = base_p + r * one_step
+        # if _code == 'ltcusdt':
+        #     print(p)
+
         _price = round(p, precis) # 最终下单价格
 
+        # if _code == 'ltcusdt':
+        #     print(_price)
         # 这一单内要交易的金额, usdt
         _amount = _trading_amount[0]
 
@@ -128,18 +145,20 @@ while True:
         # 解析code，分为 usdt/btc/eth
         if _code[-3:] == 'btc':
             try:
-                btcq = HuobiQuota['btcusdt']
-                p = float(btcq['tick']['asks'][0][0]) + float(btcq['tick']['bids'][0][0])
-                p = p/2
-                v = _amount / (_price * p)
+                btcq = hbs.get_depth('btcusdt', 'step0')
+                #btcq = HuobiQuota['btcusdt']
+                p1 = float(btcq['tick']['asks'][0][0]) + float(btcq['tick']['bids'][0][0])
+                p1 = p1/2
+                v = _amount / (_price * p1)
             except Exception as e:
                 print('----><计算报单数量>: ', e)
         elif _code[-3:] == 'eth':
             try:
-                btcq = HuobiQuota['ethusdt']
-                p = float(btcq['tick']['asks'][0][0]) + float(btcq['tick']['bids'][0][0])
-                p = p / 2
-                v = _amount / (_price * p)
+                btcq = hbs.get_depth('ethusdt', 'step0')
+                #btcq = HuobiQuota['ethusdt']
+                p2 = float(btcq['tick']['asks'][0][0]) + float(btcq['tick']['bids'][0][0])
+                p2 = p2 / 2
+                v = _amount / (_price * p2)
             except Exception as e:
                 print('----><计算报单数量>: ', e)
         else:
