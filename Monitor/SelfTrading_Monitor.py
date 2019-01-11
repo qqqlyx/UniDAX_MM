@@ -11,13 +11,13 @@ import datetime
 import time
 import sys
 import subprocess
+sys.path.append('D:\\Robin\\UniDAX_MM')
+#sys.path.append('D:\\Github\\UniDAX_MM')
 from Core import Tokens
 
 #param = sys.argv[1]
 param = 'ST2'
 
-sys.path.append('D:\\Robin\\UniDAX_MM')
-#sys.path.append('D:\\Github\\UniDAX_MM')
 
 if param == 'ST1':
     # 第一种
