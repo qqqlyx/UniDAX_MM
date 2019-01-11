@@ -16,6 +16,10 @@ import os
 from Core import Tokens
 from pprint import *
 
+'''
+这个策略用来刷量，先用prepare确定好第二天报单计划
+本策略只负责按计划下单
+'''
 # ST2自成交策略，需要prepare配合运行
 # 成交时间、金额由setting文件确认好
 
