@@ -16,8 +16,6 @@ import os
 from Core import Tokens
 from pprint import *
 
-sys.path.append('D:\\Robin\\UniDAX_MM')
-
 # ST2自成交策略，需要prepare配合运行
 # 成交时间、金额由setting文件确认好
 
