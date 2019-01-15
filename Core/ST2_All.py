@@ -78,7 +78,14 @@ while True:
         _code_set.add('btcusdt')
         _code_set.add('ethusdt')
 
-        print("换日完成")
+        # 获取参数
+        path = _path + '\\' + 'Param.txt'
+        f = open(path)
+        line = f.readlines()
+        _huobi_ratio = float(line[0].split('\n')[0].split('=')[1])
+        _trade_time = float(line[1].split('\n')[0].split('=')[1])
+
+        print("当前交易日期=" + _runDay)
 
     '''
     处理自交易,当现在时间>触发时间戳时，触发对应交易
@@ -119,6 +126,11 @@ while True:
         bid_p = float(quota['tick']['bids'][0][0])
         base_p = (ask_p + bid_p)/2  # 基准价格
 
+        # 自成交数量数据
+        t = hbs.get_kline(symbol=_code, period='1min', size=1)
+        huobiAmount = t['data'][0]['amount']
+        _amount_byHB = _trade_time / 60 * huobiAmount * _huobi_ratio
+
 
         # 计算一跳的价格
         precis = cons.get_precision(_code, 'price')
@@ -137,7 +149,7 @@ while True:
         # if _code == 'ltcusdt':
         #     print(_price)
         # 这一单内要交易的金额, usdt
-        _amount = _trading_amount[0]
+        _amount = _trading_amount[0] + _amount_byHB
 
         # 数量计算
         _volume = 0
@@ -173,7 +185,7 @@ while True:
         del _trading_time[0]
         del _trading_code[0]
 
-        s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', amount=' + str(_amount)+ ', price=' + str(_price)+ ', volume=' + str(_volume)
+        s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', amount=' + str(_amount)+ ', amount_HB=' + str(_amount_byHB) +', price=' + str(_price)+ ', volume=' + str(_volume)
         if _code[-3:] == 'btc':
             s += ', btc_price=' + str(p)
         elif _code[-3:] == 'eth':
