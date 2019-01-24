@@ -79,7 +79,7 @@ while True:
         _code_set.add('ethusdt')
 
         # 获取参数
-        path = _path + '\\' + 'Param.txt'
+        path = _path + '\\' + date + '\\' + 'Param.txt'
         f = open(path)
         line = f.readlines()
         _huobi_ratio = float(line[0].split('\n')[0].split('=')[1])
@@ -97,8 +97,8 @@ while True:
         del _trading_amount[0]
         del _trading_time[0]
         del _trading_code[0]
-        print('忽略陈旧计划：' + str(_trading_amount[0]))
         continue
+
 
     # 每分钟更新一次行情
     # ts = datetime.datetime.now() - _last_quotaTime
@@ -127,8 +127,13 @@ while True:
         base_p = (ask_p + bid_p)/2  # 基准价格
 
         # 自成交数量数据
-        t = hbs.get_kline(symbol=_code, period='1min', size=1)
-        huobiAmount = t['data'][0]['amount']
+        try:
+            t = hbs.get_kline(symbol=_code, period='1min', size=2)
+            huobiAmount = t['data'][1]['amount']
+        except Exception as e:
+            print('----><获取k线>: ', e)
+            huobiAmount = 0
+
         _amount_byHB = _trade_time / 60 * huobiAmount * _huobi_ratio
 
 
@@ -149,7 +154,7 @@ while True:
         # if _code == 'ltcusdt':
         #     print(_price)
         # 这一单内要交易的金额, usdt
-        _amount = _trading_amount[0] + _amount_byHB
+        _amount = _trading_amount[0]
 
         # 数量计算
         _volume = 0
@@ -177,19 +182,15 @@ while True:
             v = _amount / _price
 
         # 数量标准化
-        _volume = round(v, cons.get_precision(_code, 'volume'))
-
+        _volume = round(v + _amount_byHB, cons.get_precision(_code, 'volume'))
 
         # 删除交易完成的内容
         del _trading_amount[0]
         del _trading_time[0]
         del _trading_code[0]
 
-        s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', amount=' + str(_amount)+ ', amount_HB=' + str(_amount_byHB) +', price=' + str(_price)+ ', volume=' + str(_volume)
-        if _code[-3:] == 'btc':
-            s += ', btc_price=' + str(p)
-        elif _code[-3:] == 'eth':
-            s += ', eth_price=' + str(p)
+        ratio_hb = round(_amount_byHB / _volume * 100, 4)
+        s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', vol=' + str(_volume) + ', ratio_hb=' + str(ratio_hb) + '%' +', price=' + str(_price)
 
 
         print(s)

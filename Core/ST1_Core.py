@@ -8,8 +8,8 @@ from Api.UniDax import UniDaxServices as uds
 from Api.Huobi import HuobiServices as hbs
 import random
 
-# stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-#               'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'sntusdt', 'manaeth']
+stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
+              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'sntusdt', 'manaeth']
 
 #stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
               #'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth']
@@ -18,7 +18,7 @@ import random
               # 'zrxusdt','omgusdt','mcoeth','manaeth','sntusdt',
               # 'wtceth','gntusdt','aeeth']
 
-stock_list = ['aeeth']
+#stock_list = ['aeeth']
 
 # 完成一轮报单的时间 秒
 turn_total_time = 55

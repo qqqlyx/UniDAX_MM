@@ -31,8 +31,9 @@ def get_allTradeOrders(_coin, start_date, end_date):
     t = uds.all_trade(_coin, pageSize='1', page=1)
     ps = str(t['data']['count'])
     data = uds.all_trade(_coin, pageSize=ps, page=1)
+    pprint(ps)
     TradeOrders = data['data']['resultList']
-
+    #pprint(TradeOrders)
     # 按日期
     DayOrders = {}
 
@@ -54,11 +55,11 @@ def get_allTradeOrders(_coin, start_date, end_date):
 
 # t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 # print(str(t))
-temp = get_allTradeOrders('btcusdt', '2018-09-15','2018-09-16')
+temp = get_allTradeOrders('btcusdt', '2019-01-10','2019-01-10')
 # lt = time.localtime(1537093932)
 # dt = time.strftime("%Y-%m-%d",lt)
 # print(dt)
 sum = 0
-for trade in temp['2018-09-15']:
+for trade in temp['2018-01-10']:
     sum += float(trade['deal_price'])
 print(sum)

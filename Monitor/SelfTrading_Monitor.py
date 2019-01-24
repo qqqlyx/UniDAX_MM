@@ -15,8 +15,8 @@ sys.path.append('D:\\Robin\\UniDAX_MM')
 #sys.path.append('D:\\Github\\UniDAX_MM')
 from Core import Tokens
 
-#param = sys.argv[1]
-param = 'ST2'
+param = sys.argv[1]
+#param = 'ST2'
 
 
 if param == 'ST1':
