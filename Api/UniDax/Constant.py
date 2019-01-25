@@ -4,8 +4,8 @@
 """
 
 # 记录各类常数
-# 'zrxusdt','omgusdt','mcoeth','manaeth','sntusdt',
-#               'wtceth','gntusdt','cmtusdt','aeeth']
+stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
+              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'sntusdt', 'manaeth']
 
 # 获取交易精度 type：price、volume
 def get_precision(code, type):
