@@ -218,7 +218,7 @@ def do_trading(code, price, vol, direction):
 
         # 打印log
         if re['msg'] != 'suc':
-            print(re)
+            print('%s CODE=%s  D=%s  P=%s  V=%s' %(re, code, direction, price,vol))
             result = '000'
         else:
             # log.info(re)
