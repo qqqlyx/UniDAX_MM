@@ -127,14 +127,17 @@ def get_ask_price(code, a_p):
 def get_ask_vol(code, a_v):
     r = float(Ratio_byHuobi * random.uniform(0.8, 1.2))
 
+    print('r',r)
+
     new = []
     for tem in a_v:
         v = float(tem * r)  # amount*（0.015-0.05)的范围随机数
         v = round(v, cons.get_precision(code, 'volume'))
 
-        if v == 0.0:
-            v = 0.1
-            
+        print('v=',v)
+        # if v == 0.0:
+        #     v = 0.001
+
         new.append(v)
     return new
 
