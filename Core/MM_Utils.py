@@ -125,11 +125,11 @@ def get_ask_price(code, a_p):
 
 # 修改ask下单数量
 def get_ask_vol(code, a_v):
-    r = Ratio_byHuobi * random.uniform(0.8, 1.2)
+    r = float(Ratio_byHuobi * random.uniform(0.8, 1.2))
 
     new = []
     for tem in a_v:
-        v = tem * r  # amount*（0.015-0.05)的范围随机数
+        v = float(tem * r)  # amount*（0.015-0.05)的范围随机数
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
     return new
@@ -146,11 +146,11 @@ def get_bid_price(code, a_p):
 
 # 修改bid下单数量
 def get_bid_vol(code, b_v):
-    r = Ratio_byHuobi * random.uniform(0.8, 1.2)
+    r = float(Ratio_byHuobi * random.uniform(0.8, 1.2))
 
     new = []
     for tem in b_v:
-        v = tem * r  # amount*（0.015-0.05)的范围随机数
+        v = float(tem * r)  # amount*（0.015-0.05)的范围随机数
         v = round(v, cons.get_precision(code, 'volume'))
         new.append(v)
     return new
