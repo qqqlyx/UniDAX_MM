@@ -134,7 +134,7 @@ while True:
         del _trading_amount[0]
         del _trading_time[0]
 
-        print(str(datetime.datetime.now()) + ',' + str(_amount) + ',' + str(_price) + ',' + str(_volume))
+        #print(str(datetime.datetime.now()) + ',' + str(_amount) + ',' + str(_price) + ',' + str(_volume))
 
         '''
         执行交易

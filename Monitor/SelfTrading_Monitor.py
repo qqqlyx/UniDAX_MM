@@ -48,7 +48,7 @@ class st_action():
                 now_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
                 if self.poll is None:
-                    print(now_time + "  Self-Trading : NORMAL")
+                    print(now_time + "  Self-Trading %s : NORMAL" %(param))
                 else:
                     print(now_time + "  Self-Trading : STOP,TRY RE-OPEN")
                     self.run()

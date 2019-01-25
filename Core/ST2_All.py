@@ -189,11 +189,9 @@ while True:
         del _trading_time[0]
         del _trading_code[0]
 
-        ratio_hb = round(_amount_byHB / _volume * 100, 4)
-        s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', vol=' + str(_volume) + ', ratio_hb=' + str(ratio_hb) + '%' +', price=' + str(_price)
-
-
-        print(s)
+        #ratio_hb = round(_amount_byHB / _volume * 100, 4)
+        #s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', vol=' + str(_volume) + ', ratio_hb=' + str(ratio_hb) + '%' +', price=' + str(_price)
+        #print(s)
 
         '''
         执行交易
