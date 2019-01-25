@@ -131,6 +131,10 @@ def get_ask_vol(code, a_v):
     for tem in a_v:
         v = float(tem * r)  # amount*（0.015-0.05)的范围随机数
         v = round(v, cons.get_precision(code, 'volume'))
+
+        if v == 0.0:
+            v = 0.1
+            
         new.append(v)
     return new
 
@@ -152,6 +156,10 @@ def get_bid_vol(code, b_v):
     for tem in b_v:
         v = float(tem * r)  # amount*（0.015-0.05)的范围随机数
         v = round(v, cons.get_precision(code, 'volume'))
+
+        if v == 0.0:
+            v = 0.1
+
         new.append(v)
     return new
 
