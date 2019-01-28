@@ -60,6 +60,12 @@ while (DoLoop):
             timeArray = time.localtime(ctime)
             otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
             _tradeTable.loc[otherStyleTime] = newRow
+
+
+    time1 = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(datas[0]['ctime']))
+    time2 = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(datas[-1]['ctime']))
+    print('[%s] - [%s] finished!')
+    
     continue
 
 _tradeTable.to_csv('d:\\%s.csv' %(Stock), index=False)
