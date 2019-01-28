@@ -206,7 +206,7 @@ while True:
             # 报卖单
             mmu.do_trading(_code, _price, _volume, 'SELL')
 
-        # # 暂停1秒
-        # time.sleep(1)
+        # 暂停1秒
+        time.sleep(0.5)
 
     continue
