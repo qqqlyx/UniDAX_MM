@@ -53,13 +53,18 @@ def get_allTradeOrders(_coin, start_date, end_date):
     return DayOrders
     #print(runDay)
 
-# t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-# print(str(t))
-temp = get_allTradeOrders('btcusdt', '2019-01-10','2019-01-10')
-# lt = time.localtime(1537093932)
-# dt = time.strftime("%Y-%m-%d",lt)
-# print(dt)
-sum = 0
-for trade in temp['2018-01-10']:
-    sum += float(trade['deal_price'])
-print(sum)
+# # t = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+# # # print(str(t))
+# # temp = get_allTradeOrders('btcusdt', '2019-01-10','2019-01-10')
+# # # lt = time.localtime(1537093932)
+# # # dt = time.strftime("%Y-%m-%d",lt)
+# # # print(dt)
+# # sum = 0
+# # for trade in temp['2018-01-10']:
+# #     sum += float(trade['deal_price'])
+# # print(sum)
+
+'''
+逐日统计成交单
+'''
+
