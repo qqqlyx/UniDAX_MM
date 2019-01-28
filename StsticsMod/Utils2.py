@@ -57,3 +57,10 @@ while (DoLoop):
 
         if mySide != 'None':
             newRow = [Stock, _data['price'], _data['volume'], _data['deal_price'], mySide, oppoID]
+            timeArray = time.localtime(ctime)
+            otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
+            _tradeTable.loc[otherStyleTime] = newRow
+    continue
+
+_tradeTable.to_csv('d:\\%s.csv' %(Stock), index=False)
+
