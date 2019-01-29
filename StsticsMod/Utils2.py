@@ -13,9 +13,10 @@ import time
 '''
 参数
 '''
-stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
+#stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
+              #'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'manaeth']
+stock_list = ['btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
               'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'manaeth']
-
 end_date = '2019-01-28 00:00:00'
 '''
 逐日统计成交单
@@ -69,8 +70,8 @@ def get_otherTrader(Stock, endStamp, myID):
 
         continue
 
-    _tradeTable.to_csv('d:\\%s.csv' % (Stock), index=False)
-    f = open('d:\\lastCtime.txt', 'w')
+    _tradeTable.to_csv('d:\\%s.csv' % (Stock), index=True)
+    f = open('d:\\%s.txt' %(Stock), 'w')
     f.write('%s,%s,%s' %(end_date, Stock, count))
     f.close()
 
