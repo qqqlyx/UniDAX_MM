@@ -16,6 +16,35 @@ begin = '2018-09-01'
 end = '2018-09-10'
 
 myID = [10090, 10091]
+
+
+'''
+折半查询
+'''
+def half_find(_y ,_stock, _cons):
+
+    left = 1
+    right = _y
+
+    while True:
+        mid = (left + right) // 2
+        quota = uds.all_trade(_stock, pageSize=500, page=mid)
+        ctime = quota['data']['resultList'][0]['ctime']
+        ctime = int(ctime) // 1000
+
+        if ctime < _cons:
+            left = mid
+            print('修改左边为%s' %(left))
+        else:
+            right = mid
+            print('修改右边为%s' % (right))
+
+        # 退出条件
+        if right - left <= 1:
+            break
+    print('返回结果%s' % (left))
+    return left
+
 '''
 找到指定日期内, 日期前后包括 
 所有成交单
@@ -27,18 +56,22 @@ def get_SomeTrades(_stock, _begin, _end):
 
     beginStamp = time.mktime(time.strptime(_begin, '%Y-%m-%d'))
     endStamp = time.mktime(time.strptime(_end, '%Y-%m-%d'))
-    page = 1
 
     # 找到开始页
-    while True:
-        quota = uds.all_trade(_stock, pageSize=5000, page=page)
-        ctime = quota['data']['resultList'][-1]['ctime']
-        ctime = int(ctime) // 1000
-        if ctime > beginStamp:
-            break
+    quota = uds.all_trade(_stock, pageSize=1, page=1)
+    count = int(quota['data']['count']) // 500 + 1
+    page = half_find(count ,_stock, beginStamp)
 
-        page += 1
-        continue
+
+    # while True:
+    #     quota = uds.all_trade(_stock, pageSize=5000, page=page)
+    #     ctime = quota['data']['resultList'][-1]['ctime']
+    #     ctime = int(ctime) // 1000
+    #     if ctime > beginStamp:
+    #         break
+    #
+    #     page += 1
+    #     continue
 
 
     # 获取成交单
