@@ -103,8 +103,9 @@ def get_SomeTrades(_stock, _begin, _end):
 trade_table = pd.DataFrame(columns=['date', 'coin', 'price', 'volume', 'amount', 'mySide', 'oppositeID'])
 
 for stock in stock_list:
+    print('%s 开始查找成交单' %(stock))
     data = get_SomeTrades(stock, _begin=begin, _end=end)
-
+    print('%s 开始制作Table' % (stock))
     for _data in data.values():
         mySide = 'None'
         oppoID = ''
