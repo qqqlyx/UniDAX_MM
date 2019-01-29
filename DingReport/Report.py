@@ -25,7 +25,7 @@ AllCoins = cons.stock_list
 全局变量
 '''
 DayNotify = ''  # 每日系统通知
-
+lastID = {}
 
 #
 def dingReport(dingUrl, content, atMobiles = '', atAll=False):
@@ -74,9 +74,20 @@ while(True):
         DayNotify = today
 
     '''
-    
+    如果成交ID重复，说明成交停止，可能有问题
     '''
-    time.sleep(1)
-    # for coin in cons.stock_list:
-    #     pprint(uds.market())
-    #     time.sleep(10000)
+    for coin in cons.stock_list:
+        datas = uds.get_trades(coin)
+        newid = datas['data'][0]['id']
+        if coin not in lastID.keys():
+            lastID[coin] = newid
+        else:
+            if lastID[coin] != newid:
+                lastID[coin] = newid
+            else:
+                # 进行报警
+                report = '->关注%s成交情况<- 相关系统开始自检，尝试解决...' %(coin)
+                dingReport(dingUrl, report, atMobiles='13640905689')
+
+
+    time.sleep(300)

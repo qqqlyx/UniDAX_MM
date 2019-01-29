@@ -13,9 +13,9 @@ _path = 'D:\\Robin\\UniDAX_MM'
 # UniDAX  TOKEN
 
 # 正式账户的api信息
-# UniDAX_APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'
-# UniDAX_SECRET = '09bb015463410a1844066df46a223db3'
-# UniDAX_unidax_url = "https://api.unidax.com/exchange-open-api"
+UniDAX_APIKEY = 'c59256c6ae13e3d45b4c9386111a6ee4'
+UniDAX_SECRET = '09bb015463410a1844066df46a223db3'
+UniDAX_unidax_url = "https://api.unidax.com/exchange-open-api"
 
 
 # test
@@ -29,9 +29,9 @@ _path = 'D:\\Robin\\UniDAX_MM'
 # UniDAX_unidax_url = "https://testwww.unidax.com/exchange-open-api"
 
 # 正式-机器人
-UniDAX_APIKEY = '8595327a8947cf06492285588d761e01'
-UniDAX_SECRET = 'b2a9019765c0a64cc54214581c7366cd'
-UniDAX_unidax_url = "https://api.unidax.com/exchange-open-api"
+# UniDAX_APIKEY = '8595327a8947cf06492285588d761e01'
+# UniDAX_SECRET = 'b2a9019765c0a64cc54214581c7366cd'
+# UniDAX_unidax_url = "https://api.unidax.com/exchange-open-api"
 
 
 

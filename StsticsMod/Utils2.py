@@ -74,7 +74,8 @@ def get_otherTrader(Stock, endStamp, myID):
     f.write('%s,%s,%s' %(end_date, Stock, count))
     f.close()
 
+
 for s in stock_list:
-    my = [10090,10091]
+    my = [10090, 10091]
     es = time.mktime(time.strptime(end_date, "%Y-%m-%d %H:%M:%S"))  # 获取时间戳
     get_otherTrader(s, es, my)
