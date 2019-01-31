@@ -50,13 +50,13 @@ while(True):
     today = '%s-%s-%s' %(time.localtime().tm_year,time.localtime().tm_mon,time.localtime().tm_mday)
     if DayNotify != today:
         # 进行通知
-        report = '(深度系统) 今日[%s]系统自检运行正常。[挂单量 = 火币5%] [挂单深度 = 20]' %(today)
+        report = '(深度系统) 系统自检运行正常。[挂单量 = 火币5%] [挂单深度 = 20]'
         dingReport(dingUrl, report)
 
         r = random.uniform(0.95,1.05)
         r = round(4000 * r, 2)
 
-        report = '(刷单系统) 今日[%s]自检运行正常。[今日UniDAX规划成交金额 = %s万 USDT]' %(today, str(r))
+        report = '(刷单系统) 自检运行正常。[今日UniDAX规划成交金额 = %s万 USDT]' %(str(r))
         dingReport(dingUrl, report)
 
         # report = 'Ding自动报警！ ->成交价偏离火币<- 深度系统开始自检。'
@@ -74,17 +74,21 @@ while(True):
     如果成交ID重复，说明成交停止，可能有问题
     '''
     for coin in cons.stock_list:
-        datas = uds.get_trades(coin)
-        newid = datas['data'][0]['id']
-        if coin not in lastID.keys():
-            lastID[coin] = newid
-        else:
-            if lastID[coin] != newid:
+        try:
+            datas = uds.get_trades(coin)
+            newid = datas['data'][0]['id']
+            if coin not in lastID.keys():
                 lastID[coin] = newid
             else:
-                # 进行报警
-                report = '->关注%s成交情况<- 相关系统开始自检，尝试解决...' %(coin)
-                dingReport(dingUrl, report, atMobiles='13640905689')
+                if lastID[coin] != newid:
+                    lastID[coin] = newid
+                else:
+                    # 进行报警
+                    report = '->关注%s成交情况<- 相关系统开始自检，尝试解决...' %(coin)
+                    dingReport(dingUrl, report, atMobiles='13640905689')
+        except Exception as e:
+            pass
+            #print('----><>: ', e)
 
 
     time.sleep(300)

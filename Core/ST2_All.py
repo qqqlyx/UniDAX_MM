@@ -131,7 +131,7 @@ while True:
             t = hbs.get_kline(symbol=_code, period='1min', size=2)
             huobiAmount = t['data'][1]['amount']
         except Exception as e:
-            print('----><获取k线>: ', e)
+            print('----><获取k线>: %s' %(_code), e)
             huobiAmount = 0
 
         _amount_byHB = _trade_time / 60 * huobiAmount * _huobi_ratio

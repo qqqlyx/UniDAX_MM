@@ -10,10 +10,14 @@ import pandas as pd
 import time
 
 stock_list = ['btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'manaeth']
+              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth']
 
-begin = '2018-09-01'
-end = '2018-09-10'
+#stock_list = ['btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc']
+
+stock_list = ['wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth']
+
+begin = '2019-01-01'
+end = '2019-01-28'
 
 myID = [10090, 10091]
 
@@ -28,7 +32,11 @@ def half_find(_y ,_stock, _cons):
 
     while True:
         mid = (left + right) // 2
-        quota = uds.all_trade(_stock, pageSize=500, page=mid)
+        quota = uds.all_trade(_stock, pageSize=5000, page=mid)
+
+        if len(quota['data']['resultList']) == 0:
+            break
+
         ctime = quota['data']['resultList'][0]['ctime']
         ctime = int(ctime) // 1000
 
@@ -59,7 +67,7 @@ def get_SomeTrades(_stock, _begin, _end):
 
     # 找到开始页
     quota = uds.all_trade(_stock, pageSize=1, page=1)
-    count = int(quota['data']['count']) // 500 + 1
+    count = int(quota['data']['count']) // 5000 + 1
     page = half_find(count ,_stock, beginStamp)
 
 
