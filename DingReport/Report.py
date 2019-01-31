@@ -50,25 +50,22 @@ while(True):
     today = '%s-%s-%s' %(time.localtime().tm_year,time.localtime().tm_mon,time.localtime().tm_mday)
     if DayNotify != today:
         # 进行通知
-        #report = '(深度系统) 自检运行正常。[挂单量 = 火币5%] [挂单深度 = 20]'
-        #report = '(机器人测试) 自检运行正常。'
-        #dingReport(dingUrl, report)
+        report = '(深度系统) 今日[%s]系统自检运行正常。[挂单量 = 火币5%] [挂单深度 = 20]' %(today)
+        dingReport(dingUrl, report)
 
         r = random.uniform(0.95,1.05)
         r = round(4000 * r, 2)
 
-        #report = '(刷单系统) 自检运行正常。[今日UniDAX规划成交金额 = %s万 USDT]' %(str(r))
-        #report = '(机器人测试) 自检运行正常。%s' %(str(r))
-
-        #dingReport(dingUrl, report)
+        report = '(刷单系统) 今日[%s]自检运行正常。[今日UniDAX规划成交金额 = %s万 USDT]' %(today, str(r))
+        dingReport(dingUrl, report)
 
         # report = 'Ding自动报警！ ->成交价偏离火币<- 深度系统开始自检。'
         # dingReport(dingUrl, report)
         # #time.sleep(2)
         # report = '自检通过，通知人工查验。'
         # dingReport(dingUrl, report, atMobiles='13640905689')
-        report = '测试完成！'
-        dingReport(dingUrl, report)
+        # report = '测试完成！'
+        # dingReport(dingUrl, report)
 
 
         DayNotify = today
