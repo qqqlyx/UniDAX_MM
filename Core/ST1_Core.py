@@ -9,16 +9,7 @@ from Api.Huobi import HuobiServices as hbs
 import random
 
 stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'manaeth']
-
-#stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              #'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth']
-
-#stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              # 'zrxusdt','omgusdt','mcoeth','manaeth','sntusdt',
-              # 'wtceth','gntusdt','aeeth']
-
-#stock_list = ['aeeth']
+              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth']
 
 # 完成一轮报单的时间 秒
 turn_total_time = 55
@@ -77,7 +68,8 @@ while True:
             r = random.randint(0, 2 * each_time)
             time.sleep(r)
         except Exception as e:
-            print('--<%s>-- %s' %(code, e))
+            pass
+            #print('--<%s>-- %s' %(code, e))
 
 
     continue

@@ -22,7 +22,9 @@ def getUrlContent(tem):
     requests.packages.urllib3.disable_warnings()
     url = unidax_url + tem
     # url = 'www.unidax.com/exchange-open-api/open/api/create_order' + tem
+    #print(url)
     r = requests.get(url,  verify=False)
+    #print(r)
     return r.json()
 
 
@@ -207,6 +209,8 @@ def account():
     url += 'api_key=' + api_key
     url += '&time=' + time
     url += '&sign=' + sign
+
+
     return getUrlContent(url)
 
 

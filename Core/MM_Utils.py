@@ -259,12 +259,6 @@ def mm_cancel_all(stock_list, all_order):
                     id = str(order['id'])
                     r = uds.cancel_order(code, id)
                     re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
-                    # 打印log
-                    if re['msg'] != 'suc':
-                        print('(mmAction.mm_cancel_all): code: ' + code)
-                        print(re)
-                    # else:
-                    #     log.info(re)
 
     return
 

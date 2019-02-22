@@ -14,6 +14,7 @@ import random
 import datetime
 import os
 from Core import Tokens
+from Core import ST2_Prepare
 from pprint import *
 
 # ST2自成交策略，需要prepare配合运行
@@ -87,6 +88,9 @@ while True:
 
         print("当前交易日期=" + _runDay)
 
+        # 构建明日交易计划
+        ST2_Prepare.prepare_NextDayPlan()
+
     '''
     处理自交易,当现在时间>触发时间戳时，触发对应交易
     '''
@@ -99,27 +103,11 @@ while True:
         del _trading_code[0]
         continue
 
-
-    # 每分钟更新一次行情
-    # ts = datetime.datetime.now() - _last_quotaTime
-    # if ts.seconds >= 60 or len(HuobiQuota) == 0:
-    #     _last_quotaTime = datetime.datetime.now()
-    #     for coin in _code_set:
-    #         HuobiQuota[coin] = hbs.get_depth(coin, 'step0')
-    #     pprint(HuobiQuota['ltcusdt'])
-
     # 以下是正常触发交易情况
     if now >= _trading_time[0]: # 触发交易
         _code = _trading_code[0]
         #quota = HuobiQuota[code]
         quota = hbs.get_depth(_code, 'step0')
-
-        # if _code == 'ltcusdt':
-        #     pprint(quota)
-
-        # if quota['msg'] != 'suc':
-        #     print('获取行情失败，重新开始运行')
-        #     continue
 
         # 自成交相关数据
         ask_p = float(quota['tick']['asks'][0][0])
@@ -131,7 +119,6 @@ while True:
             t = hbs.get_kline(symbol=_code, period='1min', size=2)
             huobiAmount = t['data'][1]['amount']
         except Exception as e:
-            print('----><获取k线>: %s' %(_code), e)
             huobiAmount = 0
 
         _amount_byHB = _trade_time / 60 * huobiAmount * _huobi_ratio
@@ -188,10 +175,6 @@ while True:
         del _trading_amount[0]
         del _trading_time[0]
         del _trading_code[0]
-
-        #ratio_hb = round(_amount_byHB / _volume * 100, 4)
-        #s = str(datetime.datetime.now()) + ', code=' + str(_code)+ ', vol=' + str(_volume) + ', ratio_hb=' + str(ratio_hb) + '%' +', price=' + str(_price)
-        #print(s)
 
         '''
         执行交易

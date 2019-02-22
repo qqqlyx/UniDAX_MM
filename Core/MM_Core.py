@@ -7,6 +7,7 @@ from Core import MM_Utils as utils
 code =sys.argv[1]
 stock_list = [code]
 
+
 while True:
 
     #print('test' + code)
