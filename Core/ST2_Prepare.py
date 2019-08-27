@@ -38,6 +38,19 @@ def prepare_NextDayPlan():
     # 读取火币成交量比例
     _totalTradeAmount_Huobi = datas.iloc[1, 1] # 根据火币成交量调整比例
 
+    # 控制交易量
+    # 整体交易量在2个月内下降60%
+    control_begin_date = datetime.datetime.strptime('2019-07-06', "%Y-%m-%d")
+    control_days = (datetime.datetime.now() - control_begin_date).days
+    control_speed = [1.1, 2.27, 3.31, 4.49, 5.31, 6.34, 7.31, 8.33, 9.31, 10.31, 11.14, 12.15, 13.23, 14.15, 14.99, 15.86, 17.02, 17.86, 18.91, 19.93, 20.84, 21.97, 22.93, 24.07, 24.99, 25.92, 26.95, 28.03, 28.84, 29.67, 30.65, 31.51, 32.41, 33.45, 34.47, 35.39, 36.54, 37.73, 38.67, 39.6, 40.54, 41.47, 42.67, 43.79, 44.62, 45.63, 46.81, 47.85, 48.74, 49.54, 50.66, 51.74, 52.59, 53.58, 54.59, 55.49, 56.49, 57.35, 58.49, 59.53]
+    if control_days >= len(control_speed):
+        cs = 59.53 / 100
+    else:
+        cs = control_speed[control_days] / 100
+    _totalTradeAmount_min *= (1-cs)
+    _totalTradeAmount_max *= (1-cs)
+    _totalTradeAmount_Huobi *= (1-cs)
+
     # 读取活跃交易时间
     _activeTime = []
     for i in range(2, 5):
@@ -53,7 +66,7 @@ def prepare_NextDayPlan():
     for i in range(row_count):
         item = str(datas.iloc[i][0])
         if '*' in item:
-            coin = item.replace('*','')
+            coin = item.replace('*', '')
             value = datas.iloc[i][1]
             _coinTradeRatio[coin] = value
 
@@ -230,3 +243,5 @@ def prepare_NextDayPlan():
 
 
     f.close()
+
+prepare_NextDayPlan()

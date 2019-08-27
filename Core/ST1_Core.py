@@ -7,41 +7,52 @@ from Api.UniDax import Constant as cons
 from Api.UniDax import UniDaxServices as uds
 from Api.Huobi import HuobiServices as hbs
 import random
+from Core import Tokens
 
-stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth']
-
+stock_list = cons.stock_list
+#stock_list = ['sntusdt']
 # 完成一轮报单的时间 秒
-turn_total_time = 55
+turn_total_time = 120
 
 # 为了增加真实性，此处报单顺序会随机打乱
 while True:
-    # 把stock顺序打乱
+    # 把stock顺 序打乱
     random.shuffle(stock_list)
 
     # 再进行报单
     for code in stock_list:
         # 使用火币报价
         try:
-            quota_hb = hbs.get_depth(code, 'step0')
-            a = 1
-            if quota_hb['status'] != 'ok':
-                break
+            # quota_hb = hbs.get_depth(code, 'step0')
+            # a = 1
+            # if quota_hb['status'] != 'ok':
+            #     break
 
-            # 价格使用火币的价格进行计算
-            price1 = float(quota_hb['tick']['asks'][0][0])
-            price2 = float(quota_hb['tick']['bids'][0][0])
-            price = (price1 + price2) / 2
+            # # 价格使用火币的价格进行计算
+            # price1 = float(quota_hb['tick']['asks'][0][0])
+            # price2 = float(quota_hb['tick']['bids'][0][0])
+            # price = (price1 + price2) / 2
 
             # 量使用UniDAX的量
             quota_uni = uds.market_dept(code, 'step0')
 
             # 如果没有盘口 就不做报单
-            if len(quota_uni['data']['tick']['asks']) < 6:
+            if len(quota_uni['data']['tick']['asks']) < 5:
                 break
 
-            if len(quota_uni['data']['tick']['bids']) < 6:
+            if len(quota_uni['data']['tick']['bids']) < 5:
                 break
+
+            # 价格使用UniDAX的价格进行计算
+            price1 = float(quota_uni['data']['tick']['asks'][0][0])
+            price2 = float(quota_uni['data']['tick']['bids'][0][0])
+            base_p = (price1 + price2) / 2
+            precis = cons.get_precision(code, 'price')
+            one_step = 1 / (pow(10, precis))  # 一跳
+            # 在基准价格上下2跳内，随机取价格
+            r = random.randint(-4, 4)
+            price = base_p + r * one_step
+
 
             vol1 = quota_uni['data']['tick']['asks'][0][1]
             vol2 = quota_uni['data']['tick']['bids'][0][1]
@@ -52,14 +63,20 @@ while True:
             v = round(vol, cons.get_precision(code, 'volume'))
             p = round(price, cons.get_precision(code, 'price'))
 
-            # 报买单
-            mmu.do_trading(code, p, v, 'BUY')
+            if v > 0:
+                # 报卖单
+                t = mmu.do_trading(code, p, v, 'SELL')
+                # 稍微等一下 避免报单过快
+                time.sleep(0.01)
+                if t != '000':
+                    # 报买单
+                    mmu.do_trading(code, p, v, 'BUY')
 
-            # 稍微等一下 避免报单过快
-            time.sleep(0.01)
+            if code == 'ethusdt' or code == 'ltcusdt':
+                s = 'ST1: code=%s, price=%s, volume=%s' % (code, p, v)
+                print(s)
 
-            # 报卖单
-            mmu.do_trading(code, p, v, 'SELL')
+
 
             # 报单后等随机时间，以使得各合约成交时间不同
             # 等待时间根据‘一轮报单时间’参数确定
@@ -70,8 +87,6 @@ while True:
         except Exception as e:
             pass
             #print('--<%s>-- %s' %(code, e))
-
-
     continue
 
 

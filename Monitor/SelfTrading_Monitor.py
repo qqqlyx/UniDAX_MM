@@ -23,10 +23,14 @@ if param == 'ST1':
     # 第一种
     # 根据火币成交量比例自成交
     path = Tokens._path + '\\Core\\ST1_Core.py'
-else:
+elif param == 'ST2':
     # 第二种
     # 自设定数据成交
     path = Tokens._path + '\\Core\\ST2_All.py'
+elif param == 'ST_infbtc':
+    # 第二种
+    # 自设定数据成交
+    path = Tokens._path + '\\Core\\ST_infbtc.py'
 
 
 class st_action():

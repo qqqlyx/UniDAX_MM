@@ -2,39 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30d7187c-cbf9-4adf-b648-848834d663ee" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Core/ST2_Prepare.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Bitkub/BitkubServices.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Api/Bitkub/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/MM_Core2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/MM_Core3.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Core/ST_infbtc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Monitor/Cancel_All2.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Monitor/RT_Monitor.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RealTrading/DingReport.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RealTrading/RT_Core.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/Huobi/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Huobi/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/UniDax/Constant.py" beforeDir="false" afterPath="$PROJECT_DIR$/Api/UniDax/Constant.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Api/UniDax/UniDaxServices.py" beforeDir="false" afterPath="$PROJECT_DIR$/Api/UniDax/UniDaxServices.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Api/UniDax/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Api/UniDax/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/MM_Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MM_Core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/MM_Utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/MM_Utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/ST1_Core.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ST1_Core.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/ST2_All.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ST2_All.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/ST2_Core.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/ST2_Prepare.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/ST2_Prepare.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/Tokens.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Tokens.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DingReport/Report.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_aeusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_cmtusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_elfusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_manausdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_mcousdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_pptusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_repusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_sntusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_wtcusdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/MM/run_yoousdt.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/batWriter.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Run/run_hedge.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ST_setting/ST2_ChangeTime.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ST_setting/ST2_Prepare.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StsticsMod/Utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StsticsMod/Utils2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/StsticsMod/Utils3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_huobi_history.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/get_unidax_historyTrade.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monitor/Cancel_All.py" beforeDir="false" afterPath="$PROJECT_DIR$/Monitor/Cancel_All.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Monitor/SelfTrading_Monitor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Monitor/SelfTrading_Monitor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019219/Param.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019219/all.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019220/Param.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019220/all.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019221/Param.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019221/all.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019222/Param.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019222/all.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019223/Param.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/2019223/all.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ST_setting/UniDAX_MarketMaker.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/ST_setting/UniDAX_MarketMaker.xlsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -76,39 +75,47 @@
     <session id="-530915526">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="14" />
           <entry key="project.open.time.10" value="1" />
-          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="3" />
           <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.17" value="1" />
+          <entry key="project.open.time.18" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.23" value="1" />
           <entry key="project.open.time.26" value="1" />
-          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.4" value="2" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.8" value="2" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="18" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="4400" />
+          <entry key="dummy" value="7" />
+          <entry key="py" value="13152" />
           <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="PLAIN_TEXT" value="10" />
-          <entry key="Python" value="4400" />
+          <entry key="PLAIN_TEXT" value="17" />
+          <entry key="Python" value="13152" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="bat" value="3" />
-          <entry key="py" value="77" />
+          <entry key="gitignore" value="1" />
+          <entry key="py" value="156" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="PLAIN_TEXT" value="3" />
-          <entry key="Python" value="77" />
+          <entry key="PLAIN_TEXT" value="4" />
+          <entry key="Python" value="156" />
         </counts>
       </usages-collector>
     </session>
@@ -149,28 +156,40 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/ST1_Core.py">
+        <entry file="file://$PROJECT_DIR$/Monitor/MM_Monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Core/MM_Core.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+            <state relative-caret-position="270">
+              <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/MM_Utils.py">
+        <entry file="file://$PROJECT_DIR$/Core/Tokens.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="378">
+              <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Api/UniDax/UniDaxServices.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="180" column="37" selection-start-line="180" selection-start-column="37" selection-end-line="180" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/RealTrading/RT_Core.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="297">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -178,8 +197,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/ST2_All.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="351">
-              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="864">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
               <folding>
                 <element signature="e#0#10#0" expanded="true" />
               </folding>
@@ -188,19 +207,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/Hedge1_Core.py">
+        <entry file="file://$PROJECT_DIR$/Core/ST2_Prepare.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="621">
-              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="1998">
+              <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/Hedge1_Utils.py">
+        <entry file="file://$PROJECT_DIR$/Core/ST_infbtc.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-405">
-              <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+            <state relative-caret-position="837">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
             </state>
           </provider>
         </entry>
@@ -208,38 +227,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Monitor/Cancel_All.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="61">
-              <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-              <folding>
-                <element signature="e#62#106#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="459">
+              <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/Hedge2_Core.py">
+        <entry file="file://$PROJECT_DIR$/Monitor/RT_Monitor.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
-              <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+            <state relative-caret-position="540">
+              <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core/Hedge2_Utils.py">
+        <entry file="file://$PROJECT_DIR$/Core/MM_Core.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Api/UniDax/Constant.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
+            <state relative-caret-position="243">
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -255,29 +262,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>new_order</find>
-      <find>new_</find>
-      <find>10</find>
-      <find>ver</find>
-      <find>mm_cancel</find>
-      <find>mm_cancel_all</find>
-      <find>do_t</find>
-      <find>new</find>
-      <find>getUrlContent</find>
-      <find>cancel</find>
-      <find>0.01</find>
-      <find>MARKET_URL</find>
-      <find>http_get_request</find>
-      <find>print</find>
-      <find>btc</find>
-      <find>.loc</find>
       <find>do_trading</find>
       <find>HuobiQuota</find>
       <find>hbs</find>
       <find>Stock</find>
       <find>myID</find>
       <find>获取k</find>
+      <find>pow</find>
+      <find>prepare_NextDayPlan</find>
+      <find>new_order</find>
+      <find>new_</find>
+      <find>max_count</find>
+      <find>pay</find>
+      <find>huobi_quota</find>
+      <find>GET_ALL</find>
+      <find>new</find>
+      <find>10</find>
+      <find>order_count</find>
+      <find>except&lt;mm_trading&gt;</find>
       <find>try</find>
+      <find>Ratio_byHuobi</find>
+      <find>max</find>
+      <find>market</find>
+      <find>max_order_vol</find>
+      <find>INF</find>
+      <find>get_quota</find>
+      <find>round</find>
+      <find>except&lt;get_huobi_depth&gt;</find>
+      <find>order_count_make</find>
+      <find>special_count</find>
+      <find>0.002</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -308,22 +322,33 @@
         <option value="$PROJECT_DIR$/__init__.py" />
         <option value="$PROJECT_DIR$/StsticsMod/Utils.py" />
         <option value="$PROJECT_DIR$/Core/ST2_Core.py" />
-        <option value="$PROJECT_DIR$/Monitor/SelfTrading_Monitor.py" />
-        <option value="$PROJECT_DIR$/Monitor/Cancel_All.py" />
         <option value="$PROJECT_DIR$/StsticsMod/Utils2.py" />
         <option value="$PROJECT_DIR$/StsticsMod/Utils3.py" />
         <option value="$PROJECT_DIR$/DingReport/Report.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/Api/UniDax/UniDaxServices.py" />
         <option value="$PROJECT_DIR$/Test/MM_Utils.py" />
-        <option value="$PROJECT_DIR$/Core/MM_Utils.py" />
-        <option value="$PROJECT_DIR$/Core/Tokens.py" />
-        <option value="$PROJECT_DIR$/Core/ST2_All.py" />
-        <option value="$PROJECT_DIR$/Core/ST2_Prepare.py" />
         <option value="$PROJECT_DIR$/Api/Huobi/__init__.py" />
         <option value="$PROJECT_DIR$/Api/UniDax/__init__.py" />
-        <option value="$PROJECT_DIR$/Core/ST1_Core.py" />
+        <option value="$PROJECT_DIR$/Core/Tokens.py" />
+        <option value="$PROJECT_DIR$/Api/Bitkub/__init__.py" />
+        <option value="$PROJECT_DIR$/Core/MM_Core2.py" />
+        <option value="$PROJECT_DIR$/Api/UniDax/Constant.py" />
+        <option value="$PROJECT_DIR$/Api/UniDax/UniDaxServices.py" />
+        <option value="$PROJECT_DIR$/Core/MM_Core3.py" />
+        <option value="$PROJECT_DIR$/Monitor/Cancel_All2.py" />
+        <option value="$PROJECT_DIR$/Monitor/SelfTrading_Monitor.py" />
+        <option value="$PROJECT_DIR$/Api/Bitkub/BitkubServices.py" />
+        <option value="$PROJECT_DIR$/Core/ST_infbtc.py" />
         <option value="$PROJECT_DIR$/Core/MM_Core.py" />
+        <option value="$PROJECT_DIR$/RealTrading/Core.py" />
+        <option value="$PROJECT_DIR$/RealTrading/DingReport.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/Monitor/RT_Monitor.py" />
+        <option value="$PROJECT_DIR$/RealTrading/RT_Core.py" />
+        <option value="$PROJECT_DIR$/Core/ST1_Core.py" />
+        <option value="$PROJECT_DIR$/Core/ST2_All.py" />
+        <option value="$PROJECT_DIR$/Core/ST2_Prepare.py" />
+        <option value="$PROJECT_DIR$/Core/MM_Utils.py" />
+        <option value="$PROJECT_DIR$/Monitor/Cancel_All.py" />
       </list>
     </option>
   </component>
@@ -358,12 +383,6 @@
               <item name="UniDAX_MM" type="b2602c69:ProjectViewProjectNode" />
               <item name="UniDAX_MM" type="462c0819:PsiDirectoryNode" />
               <item name="Api" type="462c0819:PsiDirectoryNode" />
-              <item name="Huobi" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="UniDAX_MM" type="b2602c69:ProjectViewProjectNode" />
-              <item name="UniDAX_MM" type="462c0819:PsiDirectoryNode" />
-              <item name="Api" type="462c0819:PsiDirectoryNode" />
               <item name="UniDax" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,6 +395,11 @@
               <item name="UniDAX_MM" type="462c0819:PsiDirectoryNode" />
               <item name="Monitor" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="UniDAX_MM" type="b2602c69:ProjectViewProjectNode" />
+              <item name="UniDAX_MM" type="462c0819:PsiDirectoryNode" />
+              <item name="RealTrading" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -383,19 +407,21 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../UniDAX_TEST" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Robin\UniDAX_MM\Test" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Robin\UniDAX_MM" />
       <recent name="D:\Robin\UniDAX_MM\Run" />
       <recent name="D:\Robin\UniDAX_MM\Run\MM" />
       <recent name="D:\GitHub\UniDAX_MM\UniDax" />
       <recent name="D:\GitHub\UniDAX_MM\Huobi" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Robin\UniDAX_MM\Core" />
+      <recent name="D:\Robin\UniDAX_MM\Monitor" />
+      <recent name="D:\Robin\UniDAX_MM\Test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -410,8 +436,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.ST2_Prepare">
-    <configuration name="Report" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.Cancel_All">
+    <configuration name="Cancel_All" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UniDAX_MM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -419,11 +445,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DingReport" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Monitor" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DingReport/Report.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Monitor/Cancel_All.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -432,7 +458,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ST2_Prepare" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="DingReport" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="UniDAX_MM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RealTrading" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RealTrading/DingReport.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="MM_Core" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UniDAX_MM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -444,7 +491,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Core/ST2_Prepare.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Core/MM_Core.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -453,7 +500,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Utils2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="RT_Core" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="UniDAX_MM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -461,32 +508,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StsticsMod" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RealTrading" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StsticsMod/Utils2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Utils3" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="UniDAX_MM" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/StsticsMod" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/StsticsMod/Utils3.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RealTrading/RT_Core.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -518,18 +544,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.Utils2" />
-      <item itemvalue="Python.Utils3" />
-      <item itemvalue="Python.Report" />
-      <item itemvalue="Python.ST2_Prepare" />
+      <item itemvalue="Python.MM_Core" />
+      <item itemvalue="Python.Cancel_All" />
+      <item itemvalue="Python.RT_Core" />
+      <item itemvalue="Python.DingReport" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.ST2_Prepare" />
+        <item itemvalue="Python.Cancel_All" />
+        <item itemvalue="Python.RT_Core" />
         <item itemvalue="Python.test" />
-        <item itemvalue="Python.Report" />
-        <item itemvalue="Python.Utils3" />
-        <item itemvalue="Python.Utils2" />
+        <item itemvalue="Python.DingReport" />
+        <item itemvalue="Python.MM_Core" />
       </list>
     </recent_temporary>
   </component>
@@ -572,8 +598,8 @@
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.329718" />
-      <window_info anchor="bottom" x="21" y="564" width="1898" height="389" id="Run" order="2" visible="true" weight="0.1465798" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4277959" />
+      <window_info anchor="bottom" x="21" y="564" width="1898" height="389" id="Run" order="2" weight="0.24429968" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.35504887" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32899022" />
@@ -622,101 +648,17 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://D:/unidax_mm/UniDaxApiServices.py" />
-    <entry file="file://D:/unidax_mm/test.py" />
-    <entry file="file://D:/Users/robin/Anaconda3/Lib/threading.py" />
-    <entry file="file://D:/Users/robin/Anaconda3/Lib/json/decoder.py" />
-    <entry file="file://$PROJECT_DIR$/.gitattributes" />
-    <entry file="file://$PROJECT_DIR$/test.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/hedgeAction.py" />
-    <entry file="file://$PROJECT_DIR$/mmCore.py" />
-    <entry file="file://$PROJECT_DIR$/mmAction.py" />
-    <entry file="file://$PROJECT_DIR$/Cancel_All.py" />
-    <entry file="file://$PROJECT_DIR$/UniDax/UniDaxServices.py" />
-    <entry file="file://$PROJECT_DIR$/Huobi/HuobiUtils.py" />
-    <entry file="file://$PROJECT_DIR$/UniDax/Constant.py" />
-    <entry file="file://$PROJECT_DIR$/Huobi/HuobiServices.py" />
-    <entry file="file://$PROJECT_DIR$/Monitor/run_selftrading.py" />
     <entry file="file://$PROJECT_DIR$/Core/ST_Core.py" />
     <entry file="file://$PROJECT_DIR$/Monitor/run_MM.py" />
-    <entry file="file://$PROJECT_DIR$/Api/Huobi/HuobiUtils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Api/Huobi/HuobiServices.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1242">
-          <caret line="46" column="27" selection-start-line="46" selection-start-column="11" selection-end-line="46" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Run/batWriter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="28" column="19" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/get_unidax_historyTrade.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1026">
-          <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitor/MM_Monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1134">
-          <caret line="45" column="26" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Run/batWriter.py" />
+    <entry file="file://$PROJECT_DIR$/get_unidax_historyTrade.py" />
     <entry file="file://$PROJECT_DIR$/__init__.py" />
     <entry file="file://$PROJECT_DIR$/Run/run_ST_all.bat">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monitor/SelfTrading_Monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1161">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-          <folding>
-            <element signature="e#69#85#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StsticsMod/Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
-          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StsticsMod/Utils2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/StsticsMod/Utils3.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="39" column="55" lean-forward="true" selection-start-line="39" selection-start-column="55" selection-end-line="39" selection-end-column="55" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/StsticsMod/Utils.py" />
+    <entry file="file://$PROJECT_DIR$/StsticsMod/Utils2.py" />
+    <entry file="file://$PROJECT_DIR$/StsticsMod/Utils3.py" />
     <entry file="file://$PROJECT_DIR$/Run/run_ST2_all.bat">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -724,77 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="70" column="13" selection-start-line="70" selection-start-column="13" selection-end-line="70" selection-end-column="13" />
-          <folding>
-            <element signature="e#1#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Api/UniDax/UniDaxServices.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
-          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/MM_Core.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/MM_Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="10" lean-forward="true" selection-start-line="18" selection-start-column="10" selection-end-line="18" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DingReport/Report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Monitor/Hedge_Monitor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
-          <caret line="51" column="8" selection-start-line="51" selection-start-column="8" selection-end-line="51" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/ST2_Core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2160">
-          <caret line="83" column="29" selection-start-line="83" selection-start-column="20" selection-end-line="83" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Tokens.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/ST2_Prepare.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="38" column="60" selection-start-line="38" selection-start-column="60" selection-end-line="38" selection-end-column="60" />
-          <folding>
-            <element signature="e#83#102#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/MM_Core.py" />
+    <entry file="file://$PROJECT_DIR$/Test/MM_Utils.py" />
+    <entry file="file://$PROJECT_DIR$/DingReport/Report.py" />
+    <entry file="file://$PROJECT_DIR$/Core/ST2_Core.py" />
     <entry file="file://$PROJECT_DIR$/Api/Huobi/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="27">
@@ -816,79 +691,239 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Api/UniDax/Constant.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="24" column="29" selection-start-line="24" selection-start-column="29" selection-end-line="24" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Hedge2_Core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Core/Hedge2_Utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Core/Hedge1_Core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+        <state relative-caret-position="405">
+          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Core/Hedge1_Utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-405">
-          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+        <state relative-caret-position="2565">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Monitor/Cancel_All.py">
+    <entry file="file://$PROJECT_DIR$/Monitor/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="9" column="18" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-          <folding>
-            <element signature="e#62#106#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="17" selection-start-column="17" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monitor/Hedge_Monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="45" column="62" selection-start-line="45" selection-start-column="62" selection-end-line="45" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/Bitkub/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/Huobi/HuobiUtils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/Huobi/HuobiServices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1053">
+          <caret line="39" column="7" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Users/robin/Anaconda3/Lib/random.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="371" selection-start-line="371" selection-end-line="371" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/UniDax/Constant.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1431">
+          <caret line="21" column="17" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monitor/Cancel_All2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="26" column="17" lean-forward="true" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Users/robin/Anaconda3/Lib/site-packages/urllib3/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Users/robin/Anaconda3/Lib/warnings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="443">
+          <caret line="184" column="15" selection-start-line="184" selection-start-column="15" selection-end-line="184" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/MM_Core3.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="21" column="5" selection-start-line="21" selection-start-column="5" selection-end-line="21" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/MM_Core2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/Bitkub/BitkubServices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Hedge2_Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="484">
+          <caret line="117" column="20" selection-start-line="117" selection-start-column="20" selection-end-line="117" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Hedge2_Core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RealTrading/DingReport.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="43" column="12" selection-start-line="43" selection-start-column="12" selection-end-line="43" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Users/robin/Anaconda3/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="311" selection-start-line="311" selection-end-line="311" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monitor/SelfTrading_Monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="28" column="46" selection-start-line="28" selection-start-column="4" selection-end-line="28" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/ST1_Core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1998">
+          <caret line="74" selection-start-line="74" selection-end-line="76" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/MM_Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/RealTrading/RT_Core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Core/ST2_All.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        <state relative-caret-position="864">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/ST1_Core.py">
+    <entry file="file://$PROJECT_DIR$/Core/ST2_Prepare.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="1998">
+          <caret line="80" column="25" selection-start-line="80" selection-start-column="25" selection-end-line="80" selection-end-column="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/MM_Utils.py">
+    <entry file="file://$PROJECT_DIR$/Core/ST_infbtc.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="351">
-          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+        <state relative-caret-position="837">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monitor/Cancel_All.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monitor/RT_Monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="25" column="33" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Core/MM_Core.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        <state relative-caret-position="243">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Monitor/MM_Monitor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="13" selection-start-line="13" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Tokens.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="16" column="10" selection-start-line="16" selection-start-column="10" selection-end-line="16" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/UniDax/UniDaxServices.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="180" column="37" selection-start-line="180" selection-start-column="37" selection-end-line="180" selection-end-column="37" />
         </state>
       </provider>
     </entry>

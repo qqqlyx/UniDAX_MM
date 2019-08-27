@@ -107,11 +107,22 @@ while True:
     if now >= _trading_time[0]: # 触发交易
         _code = _trading_code[0]
         #quota = HuobiQuota[code]
-        quota = hbs.get_depth(_code, 'step0')
+        # quota = hbs.get_depth(_code, 'step0')
+        quota_uni = uds.market_dept(_code, 'step0')
 
         # 自成交相关数据
-        ask_p = float(quota['tick']['asks'][0][0])
-        bid_p = float(quota['tick']['bids'][0][0])
+        # ask_p = float(quota['tick']['asks'][0][0])
+        # bid_p = float(quota['tick']['bids'][0][0])
+
+        if len(quota_uni['data']['tick']['asks']) < 5:
+            break
+
+        if len(quota_uni['data']['tick']['bids']) < 5:
+            break
+
+        ask_p = float(quota_uni['data']['tick']['asks'][0][0])
+        bid_p = float(quota_uni['data']['tick']['bids'][0][0])
+
         base_p = (ask_p + bid_p)/2  # 基准价格
 
         # 自成交数量数据
@@ -188,6 +199,11 @@ while True:
 
             # 报卖单
             mmu.do_trading(_code, _price, _volume, 'SELL')
+
+            if _code == 'ethusdt' or _code == 'ltcusdt':
+                s = 'ST2: code=%s, price=%s, volume=%s' % (_code, _price, _volume)
+                print(s)
+
 
         # 暂停1秒
         time.sleep(0.5)

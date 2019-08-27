@@ -1,0 +1,3 @@
+HuobiRatio=0.12621
+p_trade_time=35
+p_total_amount=311930426.52147627

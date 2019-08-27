@@ -4,8 +4,18 @@
 """
 
 # 记录各类常数
-stock_list = ['ethusdt', 'btcusdt', 'ltcusdt', 'etcusdt', 'ethbtc', 'ltcbtc',
-              'wtceth', 'zrxusdt', 'omgusdt', 'mcoeth', 'gntusdt', 'aeeth', 'sntusdt', 'manaeth']
+stock_list = []
+f = open('D:\\Robin\\UniDAX_MM\\Run\\PARAM.txt')
+data = f.read()
+d = data.split('\n')
+
+envo = d[0].split('=')[1].replace(' ', '')
+
+S = d[1].split('=')[1]
+S2 = S.split(',')
+for s in S2:
+    stock_list.append(s.replace(' ', ''))
+
 
 # 获取交易精度 type：price、volume
 def get_precision(code, type):
@@ -43,6 +53,28 @@ def get_precision(code, type):
             return 4
         if code == 'aeeth':
             return 6
+        if code == 'iostusdt':
+            return 6
+        if code == 'linketh':
+            return 8
+        if code == 'zilbtc':
+            return 10
+        if code == 'btmusdt':
+            return 4
+        if code == 'abteth':
+            return 8
+        if code == 'elfeth':
+            return 8
+        if code == 'polyeth':
+            return 6
+        if code == 'thetausdt':
+            return 4
+        if code == 'dgdeth':
+            return 6
+        if code == 'paybtc':
+            return 8
+        if code == 'infbtc':
+            return 8
 
     if type == 'volume':
         if code == 'etcusdt':
@@ -78,3 +110,25 @@ def get_precision(code, type):
             return 4
         if code == 'aeeth':
             return 4
+        if code == 'iostusdt':
+            return 4
+        if code == 'linketh':
+            return 2
+        if code == 'zilbtc':
+            return 2
+        if code == 'btmusdt':
+            return 2
+        if code == 'abteth':
+            return 2
+        if code == 'elfeth':
+            return 0
+        if code == 'polyeth':
+            return 4
+        if code == 'thetausdt':
+            return 4
+        if code == 'dgdeth':
+            return 4
+        if code == 'paybtc':
+            return 2
+        if code == 'infbtc':
+            return 2

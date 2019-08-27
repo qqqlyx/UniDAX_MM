@@ -22,9 +22,9 @@ def getUrlContent(tem):
     requests.packages.urllib3.disable_warnings()
     url = unidax_url + tem
     # url = 'www.unidax.com/exchange-open-api/open/api/create_order' + tem
-    #print(url)
+    # print(url)
     r = requests.get(url,  verify=False)
-    #print(r)
+    # print(r)
     return r.json()
 
 
@@ -115,6 +115,22 @@ PENDING_CANCEL(5," 待 撤 单 "),
 EXPIRED(6,"异常订单"); 
 '''
 
+def new_order_2(symbol, pageSize='100', page='1'):
+    url = '/open/api/new_order?'
+    api_key = APIKEY
+    secret = SECRET
+    time = getTime()
+
+    dic = {'api_key': api_key, 'time': time, 'symbol': symbol, 'pageSize': pageSize, 'page': page}
+    sort = sorted(dic.items(), key=lambda item: item[0])
+    string = ''
+    for tem in sort:
+        string += tem[0] + tem[1]
+        url += tem[0] + '=' + tem[1] + '&'
+
+    sign = getMD5(string + secret)
+    url += 'sign=' + sign
+    return getUrlContent(url)
 
 def new_order(symbol, pageSize='10000', page='1'):
     url = '/open/api/new_order?'
@@ -146,6 +162,9 @@ def create_order(symbol, side, price, volume, type='1', fee_is_user_exchange_coi
     secret = SECRET
     time = getTime()
     price = str(price)
+
+    if int(volume) == float(volume):
+        volume = int(volume)
     volume = str(volume)
 
     dic = {'symbol': symbol, 'side': side, 'price': price, 'volume': volume, 'type': type,
