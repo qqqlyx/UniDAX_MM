@@ -1,2 +1,2 @@
 Envo=Run
-StockList=ethusdt,ltcusdt,btcusdt,etcusdt,ethbtc,ltcbtc,wtceth,omgusdt,mcoeth,gntusdt,aeeth,sntusdt,manaeth,linketh,zilbtc,btmusdt,abteth,elfeth,polyeth,thetausdt,dgdeth,paybtc,infbtc,zrxusdt
+StockList=ethusdt,btcusdt,ltcusdt,etcusdt,ethbtc,ltcbtc,wtceth,omgusdt,mcoeth,gntusdt,aeeth,sntusdt,manaeth,linketh,zilbtc,btmusdt,abteth,elfeth,polyeth,thetausdt,dgdeth,paybtc,infbtc,zrxusdt,ontusdt, paxusdt

@@ -51,6 +51,12 @@ while True:
             one_step = 1 / (pow(10, precis))  # 一跳
             # 在基准价格上下2跳内，随机取价格
             r = random.randint(-4, 4)
+            # 小交易量币种，减少随机波动
+            if code in ['polyeth','infbtc','etcusdt','gntusdt','paybtc','thetausdt']:
+                #r = random.randint(-1, 1)
+                r = 0
+                #print('code=%s, r=%s' %(code,r))
+            # 计算价格
             price = base_p + r * one_step
 
 
@@ -72,9 +78,9 @@ while True:
                     # 报买单
                     mmu.do_trading(code, p, v, 'BUY')
 
-            if code == 'ethusdt' or code == 'ltcusdt':
-                s = 'ST1: code=%s, price=%s, volume=%s' % (code, p, v)
-                print(s)
+            # if code == 'ethusdt' or code == 'ltcusdt':
+            #     s = 'ST1: code=%s, price=%s, volume=%s' % (code, p, v)
+            #     print(s)
 
 
 

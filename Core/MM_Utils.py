@@ -211,7 +211,7 @@ def mm_trading(_quota):
 
 
         except Exception as e:
-            print('---->except<mm_trading>: ' + str(code), e)
+            print('---->except<mm_trading>: code =%s, ex=%s' %(str(code), e))
     return od_id
 
 # 修改ask下单价格

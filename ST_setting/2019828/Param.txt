@@ -1,3 +1,3 @@
 HuobiRatio=0.071115
 p_trade_time=35
-p_total_amount=88719576.77129072
+p_total_amount=140217903.46171033

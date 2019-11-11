@@ -75,6 +75,10 @@ def get_precision(code, type):
             return 8
         if code == 'infbtc':
             return 8
+        if code == 'ontusdt':
+             return 4
+        if code == 'paxusdt':
+            return 4
 
     if type == 'volume':
         if code == 'etcusdt':
@@ -132,3 +136,7 @@ def get_precision(code, type):
             return 2
         if code == 'infbtc':
             return 2
+        if code == 'paxusdt':
+            return 4
+        if code == 'ontusdt':
+            return 4
