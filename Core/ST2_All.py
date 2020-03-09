@@ -90,6 +90,8 @@ while True:
 
         # 构建明日交易计划
         ST2_Prepare.prepare_NextDayPlan()
+        
+        #time.sleep(1)
 
     '''
     处理自交易,当现在时间>触发时间戳时，触发对应交易

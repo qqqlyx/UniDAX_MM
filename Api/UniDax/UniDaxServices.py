@@ -149,7 +149,6 @@ def new_order(symbol, pageSize='10000', page='1'):
     url += 'sign=' + sign
     return getUrlContent(url)
 
-
 # 创建订单
 # fee_is_user_exchange_coin,0，当交易所有平台币时，此参数表示是否使用用平台币支付手续费，0否，1是
 # side = BUY、SELL

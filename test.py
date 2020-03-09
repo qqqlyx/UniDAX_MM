@@ -18,8 +18,8 @@ import random
 # t= uds.create_order(symbol='btcusdt',side = 'SELL',price = 7000,volume=0.5)
 # print(t)
 #
-# t = uds.create_order(symbol='btcusdt',side = 'BUY',price = '6300',volume=0.5)
-# print(t)
+t = uds.create_order(symbol='ontusdt',side = 'BUY',price = '0.8918',volume=1)
+print(t)
 # # #
 # all_order = uds.new_order_2('btcusdt', pageSize='1000', page='1')
 # pprint(all_order)
@@ -32,8 +32,8 @@ import random
 # print(a[-3:])
 
 #tem = uds.all_trade('infbtc', pageSize=1,page=1)
-tem = uds.all_trade('infbtc', pageSize=100,page=1)
-temp = tem['data']['resultList']
+#tem = uds.all_trade('ontusdt', pageSize=100,page=1)
+#temp = tem['data']['resultList']
 
 # kk = []
 # for t in temp:
@@ -41,4 +41,4 @@ temp = tem['data']['resultList']
 #         kk.append(t)
 #
 # pprint('**=' + str(len(kk)))
-pprint(temp)
+#pprint(temp)

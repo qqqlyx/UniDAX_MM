@@ -94,6 +94,7 @@ def cancelAll(stockList):
         haveOrder = True
         while haveOrder:
             all_order = uds.new_order_2(code)
+            # print(all_order)
             if all_order['data']['count'] > 0:
                 for order in all_order['data']['resultList']:
                     id = str(order['id'])
@@ -110,6 +111,9 @@ def mm_trading(_quota):
 
     for code in _quota:
         try:
+            #
+            # print('***0')
+
             # 最大单边报单数
             ask_count = 0
             bid_count = 0
@@ -157,7 +161,7 @@ def mm_trading(_quota):
             #     log.info('huobi_quota_ASK: ' + str(code) + ', ' + str(ask_p[i]) + ', ' + str(ask_v[i]))
             #     log.info('huobi_quota_BID: ' + str(code) + ', ' + str(bid_p[i]) + ', ' + str(bid_v[i]))
 
-
+            # print('***1')
             # 修改下单数据
             ask_p = get_ask_price(code, ask_p)
             ask_v = get_ask_vol(code, ask_v)
@@ -183,6 +187,7 @@ def mm_trading(_quota):
                         mv = random.uniform(0.8, 0.99) * max_order_vol
                         ask_v[i] = mv
 
+            # print('***2')
             # 自成交
             # r = random.uniform(0,1)
             # p = (float(ask_p[0]) + float(bid_p[0])) / 2
@@ -208,7 +213,7 @@ def mm_trading(_quota):
                 r = do_trading(code,bid_p[i],bid_v[i],'BUY')
                 od_id.append(r)
 
-
+            # print('***3')
 
         except Exception as e:
             print('---->except<mm_trading>: code =%s, ex=%s' %(str(code), e))
@@ -350,6 +355,10 @@ def do_trading(code, price, vol, direction):
     #vol = '0.01'
     try:
         time.sleep(0.1)
+
+        # if code == 'ontusdt':
+        #     return '000'
+
         r = uds.create_order(code, direction, price, vol)
         re = json.loads(r)  # 使用eval会报错，因次用了json方法转换str -> dict
 
@@ -360,6 +369,11 @@ def do_trading(code, price, vol, direction):
         else:
             # log.info(re)
             result = re['data']['order_id']
+
+        if code == 'ontusdt':
+            msg = re['msg']
+            result = re['data']['order_id']
+            print('msg=%s, order_id=%s' %(msg,result))
             
     except Exception as e:
         print('---->except<do_trading>: ' + str(code), e)

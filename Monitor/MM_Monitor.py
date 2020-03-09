@@ -41,7 +41,7 @@ class mm_action():
             print('---->except<mm_action>', e)
 
     def run(self):
-        print('start OK!')
+        print('start!')
         self.p = subprocess.Popen(['python', '%s' % self.cmd, '%s' % self.code],
                                   stdin=sys.stdin, stdout=sys.stdout, stderr=sys.stderr, shell=False)
 
